@@ -8,7 +8,7 @@ export const getWords = () => {
 
 
 export const deleteWord = (deadWord) => {
-    return fetch(`http://localhost:8000/posts/${deadWord.id}`, {
+    return fetch(`http://localhost:8000/vocabwords/${deadWord.id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
