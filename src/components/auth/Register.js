@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
@@ -12,7 +12,7 @@ export const Register = ({ setToken, setStaff }) => {
   const profileImageUrl = useRef()
   const password = useRef()
   const verifyPassword = useRef()
-  const passwordDialog = useRef()
+  const [passwordDialogue, setShowDialogue] = useState(false)
   const navigate = useNavigate()
 
   const handleRegister = (e) => {
@@ -38,14 +38,13 @@ export const Register = ({ setToken, setStaff }) => {
           }
         })
     } else {
-      passwordDialog.current.showModal()
-    }
+setShowDialogue(true)    }
   }
 
   return (
     <section className="columns is-centered">
       <form className="column is-two-thirds" onSubmit={handleRegister}>
-        <h1 className="title">Rare Publishing</h1>
+        <h1 className="title">Parallel Place Book Club</h1>
         <p className="subtitle">Create an account</p>
         <div className="field">
           <label className="label">First Name</label>

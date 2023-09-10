@@ -6,7 +6,7 @@ export const Login = ({ setToken, setStaff }) => {
   const username = useRef()
   const password = useRef()
   const navigate = useNavigate()
-  const [isUnsuccessful, setisUnsuccessful] = useState(false)
+  const [isUnsuccessful, setIsUnsuccessful] = useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -16,14 +16,14 @@ export const Login = ({ setToken, setStaff }) => {
       password: password.current.value
     }
 
-    loginUser(user).then(res => {
+    loginUser(user).then((res) => {
       if ("valid" in res && res.valid) {
         setToken(res.token)
         setStaff(res.staff)
         navigate("/")
       }
       else {
-        setisUnsuccessful(true)
+        setIsUnsuccessful(true)
       }
     })
   }
@@ -31,7 +31,7 @@ export const Login = ({ setToken, setStaff }) => {
   // Autofill Username/Password by default streamline devolopment process 
    useEffect(
     () => {
-      username.current.value = "jonathanislame@aol.com"
+      username.current.value = "DanielMyers@aol.com"
       password.current.value = "lemmon"
     },
     []
@@ -40,7 +40,7 @@ export const Login = ({ setToken, setStaff }) => {
   return (
     <section className="columns is-centered">
       <form className="column is-two-thirds" onSubmit={handleLogin}>
-        <h1 className="title">Rare Publishing</h1>
+        <h1 className="title">This Parallel Place Book Club</h1>
         <p className="subtitle">Please sign in</p>
 
         <div className="field">

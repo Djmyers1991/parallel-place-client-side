@@ -1,7 +1,6 @@
 import { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
-import Logo from "./rare.jpeg"
 
 export const NavBar = ({ token, setToken }) => {
   const navigate = useNavigate()
@@ -16,9 +15,6 @@ export const NavBar = ({ token, setToken }) => {
   return (
     <nav className="navbar is-success mb-3" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="/">
-          <img src={Logo} height="3rem" alt="Rare Logo" /> <h1 className="title is-4">Rare Publishing</h1>
-        </a>
 
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={showMobileNavbar} ref={hamburger}>
@@ -31,10 +27,12 @@ export const NavBar = ({ token, setToken }) => {
       <div className="navbar-menu" ref={navbar}>
         <div className="navbar-start">
           {
-            token
+            token  
               ?
               <>
-                <Link to="/posts" className="navbar-item">Posts</Link>
+                <Link to="/words" className="navbar-item">Vocab Words</Link>
+                <Link to="/wordsform" className="navbar-item">Vocab Word Form</Link>
+
                 <Link to="/my-posts" className="navbar-item">My Posts</Link>
                 <Link to="/categories" className="navbar-item">Category Management</Link>
                 <Link to="/users" className="navbar-item">User Management</Link>
