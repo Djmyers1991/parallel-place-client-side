@@ -86,3 +86,4 @@ https://miro.com/app/board/o9J_kiGCSK4=/
 
 4. This template is using [Bulma](https://bulma.io/documentation) for styling. Take a little bit of time to familiarize yourself with the framework if you would like to continue using it.
 # parallel-place-client-side
+# parallel-place-client-side
