@@ -3,8 +3,12 @@ import { LandingPageGreeting } from "../components/landingpage/LandingPage"
 import { VocabListTeacher } from "../components/vocabwords/teachervocab/TeacherList"
 import { TeacherVocabForm } from "../components/vocabwords/teachervocab/TeacherVocabForm"
 import { EditTeacherWord } from "../components/vocabwords/teachervocab/EditTeacherWord"
+import { StudentNameList } from "../components/students/StudentNameList"
+import { EditStudentWord } from "../components/vocabwords/studentvocab/EditStudentWord"
+import { EditStudentNameList } from "../components/students/EditStudentNameList"
+import { TeacherNameList } from "../components/teachers/TeacherNameList"
+import { EditTeacherNameList } from "../components/teachers/EditTeacherNameList"
 
-//import { SubscribedUserPosts } from "../components/subscriptions/ViewSubscribedUserPosts"
 
 export const StaffViews = ({ token, setToken}) => {
   return <>
@@ -14,6 +18,14 @@ export const StaffViews = ({ token, setToken}) => {
 
         <Route path="/wordsform" element={<TeacherVocabForm/>}  />
         <Route path="/editword/:wordId" element={<EditTeacherWord/>}  />
+        <Route path="/studentnamelist" element={<StudentNameList/>}  />
+        <Route path="/editstudentprofile/:studentId" element={<EditStudentNameList/>}  />
+        <Route path="/editteachernamelist/:teacherId" element={<EditTeacherNameList/>}  />
+        <Route path="/teachernamelist" element={<TeacherNameList/>}  />
+
+
+
+
 
 
 
