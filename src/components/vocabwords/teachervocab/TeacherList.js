@@ -38,7 +38,7 @@ export const VocabListTeacher = () => {
     return (
       <section className="package" key={word.id}>
 <header>
-  New Word: <Link to={`/teachereditword/${word.id}`}>{word.name}</Link>
+  New Word: <Link to={`/editword/${word.id}`}>{word.name}</Link>
 </header>
         <section> Definition: {word.definition} </section>
         <footer>{deleteButton(word)}</footer>
