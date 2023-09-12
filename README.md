@@ -2,7 +2,7 @@
 
 
 ## Application Overview
-Rare is a content management application for users to create/edit/delete posts as well as comment on others' posts via comments, tags, and reactions. To contextualize the content, categories are applied to each post to ensure the users are perusing insights relatable to their interests. As such, admins and authors can create/edit/delete cagegories as well as individual comments, tags, and reactions. To ensure that the content is appropriate, only admins are allowed to edit and delete pre-existing tags and categories. As authors are able to delete their own comments and posts, an individual page will proliferate with the logged in user's posts. The overall purpose of our app is to allow users to interact with like-minded individuals and bond over shared communal interests. Our app is less about managing content than it is about fostering life-long relationships.   
+TBD
 
 ## Technologies Used
 
@@ -17,8 +17,8 @@ Rare is a content management application for users to create/edit/delete posts a
 ### Server Side
 1. Clone this repository for the server side:
 ```sh
-git clone git@github.com:NSS-Day-Cohort-64/rare-django-server-glacier-freeze-1.git
-cd rare-django-server-glacier-freeze
+git clone Insert Token
+cd server
 ```
 2. Initialize virtual environment:
 ```sh
@@ -48,8 +48,8 @@ python3 manage.py runserver
 ### Client Side
 1. Clone this repository for the client side:
 ```sh
-git clone git@github.com:NSS-Day-Cohort-64/rare-django-client-glacier-freeze.git
-cd rare-django-client-glacier-freeze
+git clone 
+cd 
 ```
 2. Install dependencies: 
 ```sh
@@ -61,21 +61,19 @@ npm start
 ```
 3. Login credentials: (Admin = Jonathan, Author = Chesney)
 ```txt
-username: jonathanislame@aol.com
+username: 
 password: lemmon
 ```
 ```txt
-username: chesney@farmersmeet.com
+username:
 password: lemmon
 ```
 
 ## ERD
 
-https://dbdiagram.io/d/5f885a013a78976d7b77cb74
 
 ## Wireframe
 
-https://miro.com/app/board/o9J_kiGCSK4=/
 
 
 ## Features
