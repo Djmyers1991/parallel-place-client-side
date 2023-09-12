@@ -8,6 +8,9 @@ import { EditStudentWord } from "../components/vocabwords/studentvocab/EditStude
 import { EditStudentNameList } from "../components/students/EditStudentNameList"
 import { TeacherNameList } from "../components/teachers/TeacherNameList"
 import { EditTeacherNameList } from "../components/teachers/EditTeacherNameList"
+import { AssignmentList } from "../components/assignments/AssignmentList"
+import { StandardAssignmentForm, StandardSubmissionForm } from "../components/assignments/StandardSubmissionForm"
+import { StandardSubmissionList } from "../components/submissions/StandardSubmissionsList"
 
 
 export const StaffViews = ({ token, setToken}) => {
@@ -22,6 +25,12 @@ export const StaffViews = ({ token, setToken}) => {
         <Route path="/editstudentprofile/:studentId" element={<EditStudentNameList/>}  />
         <Route path="/editteachernamelist/:teacherId" element={<EditTeacherNameList/>}  />
         <Route path="/teachernamelist" element={<TeacherNameList/>}  />
+        <Route path="/assignmentlist" element={<AssignmentList/>}  />
+        <Route path="/standardassignmentform" element={<StandardSubmissionForm/>}  />
+        <Route path="/standardsubmissionslist" element={<StandardSubmissionList/>}  />
+
+
+
 
 
 

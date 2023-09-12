@@ -6,6 +6,9 @@ import { EditStudentWord } from "../components/vocabwords/studentvocab/EditStude
 import { StudentNameList } from "../components/students/StudentNameList"
 import { EditStudentNameList } from "../components/students/EditStudentNameList"
 import { TeacherNameList } from "../components/teachers/TeacherNameList"
+import { AssignmentList } from "../components/assignments/AssignmentList"
+import { StandardSubmissionForm } from "../components/assignments/StandardSubmissionForm"
+import { StandardSubmissionList } from "../components/submissions/StandardSubmissionsList"
 
 
 
@@ -20,6 +23,12 @@ export const AuthorViews = ({ token, setToken}) => {
         <Route path="/editword/:wordId" element={<EditStudentWord/>}  />
         <Route path="/teachernamelist" element={<TeacherNameList/>}  />
         <Route path="/studentnamelist" element={<StudentNameList/>}  />
+        <Route path="/assignmentlist" element={<AssignmentList/>}  />
+        <Route path="/standardsubmissionform" element={<StandardSubmissionForm/>}  />
+        <Route path="/standardsubmissionslist" element={<StandardSubmissionList/>}  />
+
+
+
 
 
 
