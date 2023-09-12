@@ -23,6 +23,8 @@ useEffect(() => {
 
 }, [])
 
+console.log(currentUser)
+
 const deleteButton = (eliminateStudent) => {
   const handleDelete = () => {
     const shouldDelete = window.confirm("Are you sure you want to delete this post?");
