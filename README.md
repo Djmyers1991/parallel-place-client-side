@@ -1,5 +1,4 @@
-# Rare: The Publishing Platform for the Discerning Writer
-
+# Parallel Place: The Ultimate Book Club's Guide to this Novel
 
 ## Application Overview
 TBD
