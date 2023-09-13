@@ -7,8 +7,10 @@ import { StudentNameList } from "../components/students/StudentNameList"
 import { EditStudentNameList } from "../components/students/EditStudentNameList"
 import { TeacherNameList } from "../components/teachers/TeacherNameList"
 import { AssignmentList } from "../components/assignments/AssignmentList"
-import { StandardSubmissionForm } from "../components/assignments/StandardSubmissionForm"
+import { StandardSubmissionForm } from "../components/submissions/StandardSubmissionForm"
 import { StandardSubmissionList } from "../components/submissions/StandardSubmissionsList"
+import { EditStudentSubmission } from "../components/submissions/EditStudentSubmission"
+import { StudentSubmissionList } from "../components/submissions/StudentSubmissionList"
 
 
 
@@ -24,8 +26,11 @@ export const AuthorViews = ({ token, setToken}) => {
         <Route path="/teachernamelist" element={<TeacherNameList/>}  />
         <Route path="/studentnamelist" element={<StudentNameList/>}  />
         <Route path="/assignmentlist" element={<AssignmentList/>}  />
-        <Route path="/standardsubmissionform" element={<StandardSubmissionForm/>}  />
-        <Route path="/standardsubmissionslist" element={<StandardSubmissionList/>}  />
+        <Route path="/standardassignmentform" element={<StandardSubmissionForm/>}  />
+        <Route path="/standardsubmissionslist" element={<StudentSubmissionList/>}  />
+        <Route path="/editstandardsubmission/:submissionId" element={<EditStudentSubmission/>}  />
+
+
 
 
 

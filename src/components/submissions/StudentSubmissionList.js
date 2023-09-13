@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { deleteStudent, getStudents } from "../../managers/students"
 import { getUserByToken } from "../../managers/tokens"
-import { deleteSubmission, getSubmissions } from "../../managers/submissions"
+import { deleteSubmission, getSubmissions, getSubmissionsByStudent } from "../../managers/submissions"
 
-export const StandardSubmissionList = () => {
+export const StudentSubmissionList = () => {
 
     const [submissions, setSubmissions] = useState([])
     const navigate = useNavigate()
@@ -20,7 +19,7 @@ export const StandardSubmissionList = () => {
     }, [token])
 
     useEffect(() => {
-        getSubmissions().then((submission) => setSubmissions(submission))
+        getSubmissionsByStudent().then((submission) => setSubmissions(submission))
 
     }, [])
 
@@ -50,7 +49,7 @@ export const StandardSubmissionList = () => {
                 {submissions.map((submission) => (
                     <section className="submissions" key={submission.id}>
                        {
-                        !currentUser.is_staff || !submission.date_reviewed ?
+                        !currentUser.is_staff && !submission.date_reviewed ?
                         <header>
                             Submissions:{" "}
                             <Link to={`/editstandardsubmission/${submission.id}`}>
