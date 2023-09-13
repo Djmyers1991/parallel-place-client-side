@@ -127,6 +127,20 @@ export const EditTeacherNameList = () => {
         </div>
       </fieldset>
 
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="representing_image" className="subtitle">Representing Image: </label>
+          <input
+            type="text"
+            name="representing_image"
+            required
+            className="form-control input"
+            value={teacherFormData.representing_image}
+            onChange={changeTeacherState}
+          />
+        </div>
+      </fieldset>
+
       <button
         type="submit"
         onClick={evt => {

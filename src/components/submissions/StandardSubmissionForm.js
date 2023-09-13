@@ -90,7 +90,11 @@ console.log(currentUser)
                             assignments.map(assignment => <option key={`assignment--${assignment.id}`} value={assignment.id}>{assignment.title}</option>)
                         }
                     </select>
+                    {/* {
+                            assignments.map(assignment => <div>{assignment.assignment_instructions}</div>)
+                        } */}
                 </div>
+
             </fieldset>
             <fieldset>
                 <div className="form-group">

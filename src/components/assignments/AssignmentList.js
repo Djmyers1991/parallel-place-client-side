@@ -32,16 +32,22 @@ return (
 
 return (
     <section className="assignment" key={assignment.id}> 
+{
+  currentUser.is_staff ?
+  <header>
+   <Link to={`/editassignment/${assignment.id}`}> Assignment {assignment.id}: {assignment.title} </Link> </header>
 
+  :
   <header>
    <Link to={`/standardassignmentform`}> Assignment {assignment.id}: {assignment.title} </Link> </header>
+
+}
   <div> Instructions: {assignment.assignment_instructions}</div>
 
         <div>----------------------------------------</div>
       </section>
     );
   })}
-<button onClick={ () => {navigate('/studentform')}}> Create New Student</button>
 </article>
 </>
 )

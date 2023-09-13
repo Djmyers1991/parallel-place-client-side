@@ -42,15 +42,23 @@ const deleteButton = (eliminateTeacher) => {
 
 return (
     <>
-      <h2 className="teacher profiles">teacher List</h2>
+      <h2 className="teacher profiles">Teacher List</h2>
       <article className="words">
   {teachers.map((teacher) => {
 
 return (
     <section className="teacher" key={teacher.id}>
-
+{
+  currentUser?.is_staff && currentUser.id === teacher.id?
   <header>
-  Teacher List: <Link to={`/editteachernamelist/${teacher.id}`}>{teacher.full_name}</Link> </header>
+    
+  <Link to={`/editteachernamelist/${teacher.id}`}>{teacher.full_name}</Link> </header>
+  : 
+  <header>
+    
+  {teacher.full_name} </header>
+
+    }
 
 
         
@@ -62,7 +70,7 @@ return (
 
 
 
-         { currentUser?.is_staff ? (
+         { currentUser?.id === teacher?.user?.id ? (
 
         
         <footer>{deleteButton(teacher)}</footer>)
@@ -74,7 +82,7 @@ return (
       </section>
     );
   })}
-<button onClick={ () => {navigate('/teacherform')}}> Create New teacher</button>
+{/* <button onClick={ () => {navigate('/teacherform')}}> Create New teacher</button> */}
 </article>
 </>
 )

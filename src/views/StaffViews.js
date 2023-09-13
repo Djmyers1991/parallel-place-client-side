@@ -9,10 +9,10 @@ import { EditStudentNameList } from "../components/students/EditStudentNameList"
 import { TeacherNameList } from "../components/teachers/TeacherNameList"
 import { EditTeacherNameList } from "../components/teachers/EditTeacherNameList"
 import { AssignmentList } from "../components/assignments/AssignmentList"
-import { StandardAssignmentForm, StandardSubmissionForm } from "../components/assignments/StandardSubmissionForm"
+import { StandardAssignmentForm, StandardSubmissionForm } from "../components/submissions/StandardSubmissionForm"
 import { StandardSubmissionList } from "../components/submissions/StandardSubmissionsList"
 import {  TeacherEvaluateSubmission } from "../components/submissions/EditSubmissions"
-
+import { EditTeacherAssignment} from "../components/assignments/EditAssignment"
 
 export const StaffViews = ({ token, setToken}) => {
   return <>
@@ -30,6 +30,8 @@ export const StaffViews = ({ token, setToken}) => {
         <Route path="/standardassignmentform" element={<StandardSubmissionForm/>}  />
         <Route path="/standardsubmissionslist" element={<StandardSubmissionList/>}  />
         <Route path="/editstandardsubmission/:submissionId" element={<TeacherEvaluateSubmission/>}  />
+        <Route path="/editassignment/:assignmentId" element={<EditTeacherAssignment/>}  />
+
 
 
 
