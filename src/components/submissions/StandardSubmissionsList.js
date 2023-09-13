@@ -51,7 +51,7 @@ export const StandardSubmissionList = () => {
                     <section className="submissions" key={submission.id}>
                         <header>
                             Submissions:{" "}
-                            <Link to={`/editstudentprofile/${submission.id}`}>
+                            <Link to={`/editstandardsubmission/${submission.id}`}>
                                 Submission {submission.id}
                             </Link>{" "}
                         </header>
