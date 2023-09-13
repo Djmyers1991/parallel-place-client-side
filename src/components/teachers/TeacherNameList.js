@@ -70,7 +70,8 @@ return (
 
 
 
-         { currentUser?.id === teacher?.user?.id ? (
+         {/* { currentUser.id === teacher?.user?.id ? ( */}
+         {currentUser?.is_staff ? (
 
         
         <footer>{deleteButton(teacher)}</footer>)
