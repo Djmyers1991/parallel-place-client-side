@@ -13,6 +13,7 @@ import { StandardAssignmentForm, StandardSubmissionForm } from "../components/su
 import { StandardSubmissionList } from "../components/submissions/StandardSubmissionsList"
 import {  TeacherEvaluateSubmission } from "../components/submissions/EditSubmissions"
 import { EditTeacherAssignment} from "../components/assignments/EditAssignment"
+import { PowerRankings } from "../components/specialassignments/PowerRankings"
 
 export const StaffViews = ({ token, setToken}) => {
   return <>
@@ -31,6 +32,8 @@ export const StaffViews = ({ token, setToken}) => {
         <Route path="/standardsubmissionslist" element={<StandardSubmissionList/>}  />
         <Route path="/editstandardsubmission/:submissionId" element={<TeacherEvaluateSubmission/>}  />
         <Route path="/editassignment/:assignmentId" element={<EditTeacherAssignment/>}  />
+        <Route path="/powerrankings" element={<PowerRankings/>}  />
+
 
 
 

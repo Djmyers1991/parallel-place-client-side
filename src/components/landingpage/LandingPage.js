@@ -13,11 +13,11 @@ export const LandingPageGreeting = () => {
       },
     })
       .then((res) => res.json())
-      .then((bio) => setBios(bio)); // Change 'setBio' to 'setBios'
-  }, [number]); // Add number as a dependency for useEffect
+      .then((bio) => setBios(bio)); 
+  }, [number]); 
 
   const handleButtonClick = () => {
-    setNumber(number + 1); // Update the number state when the button is clicked
+    setNumber(number + 1); 
   };
 
   return (
@@ -26,7 +26,6 @@ export const LandingPageGreeting = () => {
         <h1>About your Reluctant Author:</h1>
         {number === 0 ? (
           <div>
-            {/* Highlighted first paragraph with crossed-out first-person words */}
             <p className="highlighted">
               <br />
               In an ideal world, <s>I</s> David Tate would never have written <s>my</s> his own memoir.
@@ -38,7 +37,7 @@ export const LandingPageGreeting = () => {
               I have ADD. The End.
             </p>
             <div> -------------------------------------------------------</div>
-            {/* Italicized text */}
+            {/* Daniel, don't forget to italicize text */}
             <p className="italicized">
               The first plot twist is I’m David Tate, and I’m writing my own About the Author.
               <br />
