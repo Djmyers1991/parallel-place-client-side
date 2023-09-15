@@ -12,6 +12,9 @@ import { StandardSubmissionList } from "../components/submissions/StandardSubmis
 import { EditStudentSubmission } from "../components/submissions/EditStudentSubmission"
 import { StudentSubmissionList } from "../components/submissions/StudentSubmissionList"
 import { PowerRankings } from "../components/specialassignments/PowerRankings"
+import { StudentInspirationList } from "../components/inspirations/StudentInspirationList"
+import { StudentInspirationForm } from "../components/inspirations/StudentInspirationForm"
+import { InspirationEdit } from "../components/inspirations/InspirationEdit"
 
 
 
@@ -31,6 +34,12 @@ export const AuthorViews = ({ token, setToken}) => {
         <Route path="/standardsubmissionslist" element={<StudentSubmissionList/>}  />
         <Route path="/editstandardsubmission/:submissionId" element={<EditStudentSubmission/>}  />
         <Route path="/powerrankings" element={<PowerRankings/>}  />
+        <Route path="/studentinspirationlist" element={<StudentInspirationList/>}  />
+        <Route path="/inspirationform" element={<StudentInspirationForm/>}  />
+        <Route path="/editinspiration/:inspirationId" element={<InspirationEdit/>}  />
+
+
+
 
 
 
