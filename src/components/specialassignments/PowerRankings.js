@@ -74,7 +74,7 @@ export const PowerRankings = () => {
             onDragOver={(e) => e.preventDefault()}
           >
             <i className="list-item-character"></i>
-            <h3> {character.name} </h3>
+            <h3> {index + 1}. {character.name} </h3>
           </div>
         ))}
         <div>----------------------------------------</div>
