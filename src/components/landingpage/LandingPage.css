@@ -1,0 +1,87 @@
+.box {
+    margin-bottom: 20px; /* Adjust spacing as needed */
+  }
+  
+  .bio-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .italicized-box {
+    background-color: #e0e0e0; /* Customize the box background color */
+    padding: 15px; /* Add padding to the box */
+  }
+  
+  .title,
+  .highlighted,
+  .italicized {
+    font-family: 'Times New Roman', serif;
+  }
+  
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://previews.123rf.com/images/mycteria/mycteria1604/mycteria160400059/55753869-old-blank-page-from-ancient-book.jpg');
+
+  }
+  
+
+  .box {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle box shadow */
+    position: relative; /* Position relative to allow content overlay */
+    z-index: 1; /* Ensure the box is on top of the background image */
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    /* Set the background image on the container */
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; /* Position relative to allow content overlay */
+  }
+  
+  p {
+    text-align: justify; /* Justify text */
+    font-family: 'Times New Roman', serif; /* Serif font */
+    font-size: 16px; /* Adjust font size */
+    line-height: 1.6; /* Adjust line height */
+  }
+  
+  /* Drop Cap */
+  p::first-letter {
+    font-size: 36px; /* Large initial letter size */
+    float: left;
+    margin: -12px 10px 0 0;
+  }
+
+ 
+  .page-number {
+    margin-top: 300px; /* Add margin to create white space between the text and page number */
+    text-align: center;
+    font-size: 14px; /* Adjust font size as needed */
+    color: #333; /* Adjust color as needed */
+    font-family: 'Times New Roman', serif; /* Serif font */
+
+    
+  }
+
+
+.book-page {
+    max-width: 600px; /* Reduce the maximum width to make it narrower */
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle box shadow */
+    opacity: 1;
+  }
+  
+  .title {
+    text-align: center;
+  }
