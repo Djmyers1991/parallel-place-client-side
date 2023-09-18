@@ -36,14 +36,14 @@ export const LandingPageGreeting = () => {
                   bodyguard and solo-shower privileges. As <s>I'm</s> Dave is a sixteen year-old boy in jail,
                   <s>I</s> he doesn’t want to lose these perks. As <s>I'm</s> Dave is a sixteen year-old boy
                   in general, <s>I</s> he doesn’t believe in self-reflection. Please don’t judge me.
-                  I have ADD. The End. That was bad. I need to go back in time and try again. 
+                  I have ADD. The End. That was bad. Time to go back in time and try again. See button below.
                 </p>
                 <div className="page-number">Page 1</div> <div> </div>
               </div>
               
             ) : (
               <div className="box bio-box">
-                <p className="highlighted">
+                <p className="italicized">
                   {bios.introduction}
                 </p>
                 <div className="page-number">Page 1 Again</div> <div> </div>

@@ -1,3 +1,5 @@
+
+
 .box {
     margin-bottom: 20px; /* Adjust spacing as needed */
   }
@@ -14,9 +16,7 @@
     padding: 15px; /* Add padding to the box */
   }
   
-  .title,
-  .highlighted,
-  .italicized {
+  .title {
     font-family: 'Times New Roman', serif;
   }
   
@@ -25,6 +25,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('https://previews.123rf.com/images/mycteria/mycteria1604/mycteria160400059/55753869-old-blank-page-from-ancient-book.jpg');
+    font-family: 'Times New Roman', serif;
 
   }
   
@@ -45,7 +46,7 @@ body {
     position: relative; /* Position relative to allow content overlay */
   }
   
-  p {
+  .italicized {
     text-align: justify; /* Justify text */
     font-family: 'Times New Roman', serif; /* Serif font */
     font-size: 16px; /* Adjust font size */
@@ -53,7 +54,7 @@ body {
   }
   
   /* Drop Cap */
-  p::first-letter {
+  .italicized::first-letter {
     font-size: 36px; /* Large initial letter size */
     float: left;
     margin: -12px 10px 0 0;

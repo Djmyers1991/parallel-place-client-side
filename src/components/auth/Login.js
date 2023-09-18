@@ -41,7 +41,6 @@ export const Login = ({ setToken, setStaff }) => {
     <section className="columns is-centered">
       <form className="column is-two-thirds" onSubmit={handleLogin}>
         <h1 className="title">This Parallel Place Book Club</h1>
-        <p className="subtitle">Please sign in</p>
 
         <div className="field">
           <label className="label">Username</label>

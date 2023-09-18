@@ -1,0 +1,15 @@
+
+.custom-label {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .custom-input {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+
+  
+  .custom-input::placeholder {
+    text-align: center; /* Center horizontally */
+  }
+  
