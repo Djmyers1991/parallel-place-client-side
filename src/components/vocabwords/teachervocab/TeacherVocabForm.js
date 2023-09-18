@@ -1,32 +1,24 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUserByToken } from "../../../managers/tokens";
-
+import "./VocabForm.css"; // Import your CSS file here for custom styling
 
 export const TeacherVocabForm = () => {
-
     const [formError, setFormError] = useState(false);
-    const [token, setTokenState] = useState(localStorage.getItem('auth_token'))
-    const [currentUser, setCurrentUser]= useState()
-
-
-    // Default state for all tags to list on form
-
+    const [token, setTokenState] = useState(localStorage.getItem("auth_token"));
+    const [currentUser, setCurrentUser] = useState();
 
     const [word, update] = useState({
         creator: 0,
         name: "",
         definition: ""
- 
     });
-
-
 
     useEffect(() => {
         if (token) {
-            getUserByToken(token).then(data => setCurrentUser(data.creator))
+            getUserByToken(token).then((data) => setCurrentUser(data.creator));
         }
-    }, [token])
+    }, [token]);
 
     const navigate = useNavigate();
 
@@ -39,72 +31,87 @@ export const TeacherVocabForm = () => {
         const messageToSendToAPI = {
             creator: word?.currentUser?.id,
             name: word.name,
-            definition: word.definition,
-        }
-    
+            definition: word.definition
+        };
+
         fetch("http://localhost:8000/vocabwords", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json",
-                "Authorization": `Token ${localStorage.getItem("auth_token")}`
+                Accept: "application/json",
+                Authorization: `Token ${localStorage.getItem("auth_token")}`
             },
             body: JSON.stringify(messageToSendToAPI)
         })
-        .then(response => response.json())
-        .then((data) => {
-             
-            // If tags were selected, create the post/tag relationships with the new post id
-        
-            navigate(`/words`);
-        });
-    }
-        
-
+            .then((response) => response.json())
+            .then((data) => {
+                // If tags were selected, create the post/tag relationships with the new post id
+                navigate(`/words`);
+            });
+    };
 
     return (
-        <form className="wordForm column">
-            <h2 className="wordFormHeader word is-2">Create a word</h2>
-
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="wordHTML" className="name">New Word:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control input"
-                        placeholder="THINK OF A FUN word"
-                        value={word.name}
-                        onChange={(evt) => {
-                            const copy = { ...word };
-                            copy.name = evt.target.value;
-                            update(copy);
-                        }}
-                    />
+        <div className="wordForm-container">
+            <h2 className="wordFormHeader title is-2">Create a Vocabulary Flash Card</h2>
+            <form className="wordForm">
+                <div className="columns is-centered">
+                    <div className="column is-half">
+                        <div className="field">
+                            <label className="label custom-label is-large">Word</label>
+                            <div className="control has-icons-left">
+                                <input
+                                    className="input is-success is-large is-rounded is-focused custom-input"
+                                    type="text"
+                                    required
+                                    autoFocus
+                                    value={word.name}
+                                    onChange={(evt) => {
+                                        const copy = { ...word };
+                                        copy.name = evt.target.value;
+                                        update(copy);
+                                    }}
+                                />
+                                <span className="icon is-small is-left">
+                                    <i className="fas fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div className="field">
+                            <label className="label custom-label is-large">Definition</label>
+                            <div className="control has-icons-left">
+                                <textarea
+                                    required
+                                    autoFocus
+                                    className="textarea is-success is-rounded is-focused custom-input"
+                                    value={word.definition}
+                                    onChange={(evt) => {
+                                        const copy = { ...word };
+                                        copy.definition = evt.target.value;
+                                        update(copy);
+                                    }}
+                                ></textarea>
+                                <span className="icon is-small is-left">
+                                    <i className="fas fa-book"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div className="field has-text-centered">
+                            <div className="control">
+                                <button className="button is-primary" onClick={handleSaveButtonClick}>
+                                    Create Card
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="postHTML" className="definition">Write the definition:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control input"
-                        placeholder="THINK OF A FUN word"
-                        value={word.definition}
-                        onChange={(evt) => {
-                            const copy = { ...word };
-                            copy.definition = evt.target.value;
-                            update(copy);
-                        }}
-                    />
-                </div>
-            </fieldset>
-           <button onClick={handleSaveButtonClick}> Submit Word </button>
 
-          
-
-            {formError && <div className="alert alert-danger">Please fill in all of the required fields. You will not be approved until you do so. We don't mess around here.</div>}
-        </form>
+                {formError && (
+                    <div className="notification is-danger">
+                        Please fill in all of the required fields. You will not be
+                        approved until you do so. We don't mess around here.
+                    </div>
+                )}
+            </form>
+        </div>
     );
 };

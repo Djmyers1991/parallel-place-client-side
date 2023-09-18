@@ -31,7 +31,6 @@ export const NavBar = ({ token, setToken }) => {
               ?
               <>
                 <Link to="/words" className="navbar-item">Vocab Words</Link>
-                <Link to="/wordsform" className="navbar-item">Vocab Word Form</Link>
 
                 <Link to="/studentnamelist" className="navbar-item">Students</Link>
                 <Link to="/teachernamelist" className="navbar-item">Teachers</Link>
