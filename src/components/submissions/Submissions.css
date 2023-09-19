@@ -1,0 +1,39 @@
+.has-red-border {
+    border: 3px solid red; /* Increase border thickness */
+    margin-right: 10px; /* Add space between cards horizontally */
+    margin-bottom: 10px; /* Add space between cards vertically */
+  }
+  
+  .has-green-border {
+    border: 3px solid green; 
+    margin-right: 10px; 
+    margin-bottom: 10px; 
+  }
+  
+
+.times-new-roman-font {
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+
+.darker-border {
+    border: 3px solid darkgray; 
+    padding: 8px; 
+  }
+  
+.has-red-border:hover {
+    border-color: red;
+  }
+  
+  .has-green-border:hover {
+    border-color: green;
+  }
+  
+  .box {
+    /* Add other styles for the box here */
+    transition: box-shadow 0.3s; /* Add a smooth transition for the box shadow */
+  }
+  
+  .box:hover {
+    box-shadow: 5px 5px 15px rgba(133, 98, 98, 1.8); /* Add the box shadow properties you prefer */
+  }

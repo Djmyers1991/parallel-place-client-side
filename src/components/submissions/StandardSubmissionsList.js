@@ -24,7 +24,6 @@ export const StandardSubmissionList = () => {
 
     }, [])
 
-    console.log(currentUser)
 
     const deleteButton = (deadSubmission) => {
         const handleDelete = () => {
@@ -43,9 +42,22 @@ export const StandardSubmissionList = () => {
         );
       };
 
+      const seeUngradedAssignments = (event) => {
+        fetch(`http://localhost:8000/submissions?incomplete`, {
+          headers: {
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+          }
+        })
+        .then((res) => res.json())
+        .then((incompleteSubmissions) => setSubmissions(incompleteSubmissions));
+      };
+
     return (
         <>
             <h2 className="submissions">Submissions</h2>
+            <section>
+                <button onClick={seeUngradedAssignments}>Ungraded</button>
+                </section>
             <article className="words">
                 {submissions.map((submission) => (
                     <section className="submissions" key={submission.id}>
@@ -58,10 +70,7 @@ export const StandardSubmissionList = () => {
                             </Link>{" "}
                         </header>
                         :
-                        <header>
-                            Submissions:{" "}
-                                Submission {submission.id}
-                        </header>
+                      ""
 
 
 }
@@ -72,7 +81,7 @@ export const StandardSubmissionList = () => {
                         <div>Assignment Instructions: {submission?.assignment?.assignment_instructions}</div>
 
                         <div>
-                            Submission: {submission.submission}
+                            Response: {submission.submission}
                         </div>
                         { submission.date_reviewed !== null ? (
 
@@ -87,10 +96,18 @@ export const StandardSubmissionList = () => {
 }
 
 
-                        {!currentUser?.is_staff && submission.date_reviewed === null ? (
+                        {!currentUser?.is_staff && submission.date_reviewed === null && !submission.teacher? (
 
     <div>Your assignment hasn't yet been ruthlessly judged with extreme niceties that border on condescension. You know how we English people do.</div>
 )                         : " "
+                        }
+
+                        { submission.date_reviewed === null && submission.teacher ? (
+
+<div>Your assignment is currently being reviewed by {submission?.teacher?.full_name}.</div>
+)                         : " "
+                    
+
                         }
                         
                         <footer>{deleteButton(submission)}</footer>
