@@ -10,9 +10,10 @@
 
   
   .custom-input::placeholder {
-    text-align: center; /* Center horizontally */
+    text-align: center; 
   }
   
   body {
     font-family: 'Times New Roman', Times, serif;
   }
+

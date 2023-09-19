@@ -36,7 +36,7 @@ export const LandingPageGreeting = () => {
                   bodyguard and solo-shower privileges. As <s>I'm</s> Dave is a sixteen year-old boy in jail,
                   <s>I</s> he doesn’t want to lose these perks. As <s>I'm</s> Dave is a sixteen year-old boy
                   in general, <s>I</s> he doesn’t believe in self-reflection. Please don’t judge me.
-                  I have ADD. The End. That was bad. Time to go back in time and try again. See button below.
+                  I have ADD. The End. I did a real bad job writing my own about the author. <br></br> Time to go back in time and try again. See button below.
                 </p>
                 <div className="page-number">Page 1</div> <div> </div>
               </div>

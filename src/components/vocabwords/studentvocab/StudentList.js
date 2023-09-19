@@ -31,7 +31,10 @@ export const VocabListStudent = () => {
     <>
       <div className="vocab-page-container">
         <div className="title-container">
-          <h2 className="title is-3 has-text-info">Vocabulary Notecards</h2>
+        <div className="title-box">
+
+          <h2 className="title is-3 has-text-black">Vocabulary Notecards</h2>
+        </div>
         </div>
         <div className="content-container">
           <article className="vocab-card-container">
