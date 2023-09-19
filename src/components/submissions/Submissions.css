@@ -1,11 +1,11 @@
 .has-red-border {
-    border: 3px solid red; /* Increase border thickness */
+    border: 3.5px solid red; /* Increase border thickness */
     margin-right: 10px; /* Add space between cards horizontally */
     margin-bottom: 10px; /* Add space between cards vertically */
   }
   
   .has-green-border {
-    border: 3px solid green; 
+    border: 3.5px solid green; 
     margin-right: 10px; 
     margin-bottom: 10px; 
   }
@@ -30,10 +30,22 @@
   }
   
   .box {
-    /* Add other styles for the box here */
     transition: box-shadow 0.3s; /* Add a smooth transition for the box shadow */
   }
   
+  .currently-reviewing {
+    border: 3.5px solid navy; /* Increase border thickness */
+    margin-right: 10px; /* Add space between cards horizontally */
+    margin-bottom: 10px; /* Add space between cards vertically */
+  }  
+
   .box:hover {
     box-shadow: 5px 5px 15px rgba(133, 98, 98, 1.8); /* Add the box shadow properties you prefer */
   }
+
+  .submission-container {
+    margin-top: 10px; /* Adjust the margin as needed */
+    padding: 3px; /* Add padding for spacing between buttons and cards */
+  }
+  
+  

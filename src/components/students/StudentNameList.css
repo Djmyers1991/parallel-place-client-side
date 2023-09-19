@@ -1,0 +1,42 @@
+
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .card-content div {
+    margin-top: 10px;
+  }
+  
+  .card-footer-item {
+    background-color: #ff3860;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-footer-item:hover {
+    background-color: #e2264d;
+  }
+  
+  /* Style the "Create New Student" button */
+  .button.is-primary {
+    margin-top: 20px;
+  }
+  
