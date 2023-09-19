@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUserByToken } from "../../../managers/tokens";
-import "./VocabForm.css"; // Import your CSS file here for custom styling
+import "./VocabForm.css";
 
 export const TeacherVocabForm = () => {
     const [formError, setFormError] = useState(false);
