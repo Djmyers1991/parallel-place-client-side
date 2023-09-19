@@ -94,7 +94,6 @@ export const StandardSubmissionForm = () => {
           <div className="control">
             <textarea
               required
-              autoFocus
               type="text"
               class="textarea is-large"
               placeholder="Please Write Your Submission"

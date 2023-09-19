@@ -20,7 +20,7 @@ export const EditStudentNameList = () => {
         "Authorization": `Token ${localStorage.getItem("auth_token")}`
       }
     })
-      .then((response) => response.json()) // Parse the response as JSON
+      .then((response) => response.json())
       .then((studentData) => {
         setUserFormData({
           first_name: studentData?.user?.first_name || "",
@@ -33,133 +33,134 @@ export const EditStudentNameList = () => {
         });
       })
       .catch((error) => {
-        // Handle any errors here, e.g., show an error message or redirect
         console.error("Error fetching student data:", error);
       });
   }, [studentId]);
 
   const changeStudentState = (domEvent) => {
-    // Update the specific field in the new student state
     const { name, value } = domEvent.target;
     setStudentFormData({ ...studentFormData, [name]: value });
   };
 
   const changeUserState = (domEvent) => {
-    // Update the specific field in the new user state
     const { name, value } = domEvent.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
 
   return (
     <form className="studentForm column">
-      <h2 className="studentFormHeader title">Update Student Profile</h2>
+      <h2 className="title is-2">Update Student Profile</h2>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="email" className="subtitle">Email: </label>
+      <div className="field">
+        <label className="label is-size-4">Email:</label>
+        <div className="control">
           <input
             type="text"
             name="email"
             required
-            className="form-control input"
+            className="input"
             value={userFormData.email}
             onChange={changeUserState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="first_name" className="subtitle">First Name: </label>
+      <div className="field">
+        <label className="label is-size-4">First Name:</label>
+        <div className="control">
           <input
             type="text"
             name="first_name"
             required
-            className="form-control input"
+            className="input"
             value={userFormData.first_name}
             onChange={changeUserState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="last_name" className="subtitle">Last Name: </label>
+      <div className="field">
+        <label className="label is-size-4">Last Name:</label>
+        <div className="control">
           <input
             type="text"
             name="last_name"
             required
-            className="form-control input"
+            className="input"
             value={userFormData.last_name}
             onChange={changeUserState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="perceived_iq" className="subtitle">Perceived Iq: </label>
+      <div className="field">
+        <label className="label is-size-4">Perceived IQ:</label>
+        <div className="control">
           <input
-            type="text"
+            type="number"
             name="perceived_iq"
             required
-            className="form-control input"
+            className="input"
             value={studentFormData.perceived_iq}
             onChange={changeStudentState}
           />
         </div>
-      </fieldset>
-
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="overall_potential" className="subtitle">Overall Potential or Lack Thereof (1-10 scale): </label>
+      </div>
+      <div className="field">
+        <label className="label is-size-4">Writing Potential:</label>
+        <div className="control">
           <input
-            type="text"
+            type="number"
             name="overall_potential"
+            min="1"
+            max="10"
+            step=".1"
             required
-            className="form-control input"
+            className="input"
             value={studentFormData.overall_potential}
             onChange={changeStudentState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <button
-        type="submit"
-        onClick={evt => {
-          evt.preventDefault(); // Prevent form submission
-
-          // Send the updated student data to the server
-          fetch(`http://localhost:8000/students/${studentId}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Token ${localStorage.getItem("auth_token")}`
-            },
-            body: JSON.stringify(studentFormData)
-          })
-            .then(() => {
-              // Send the updated user data to the server after the student data update is successful
-              return fetch(`http://localhost:8000/users/${studentId}`, {
+      <div className="field is-grouped">
+        <div className="control">
+          <button
+            type="submit"
+            onClick={(evt) => {
+              evt.preventDefault();
+              fetch(`http://localhost:8000/students/${studentId}`, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
                   "Authorization": `Token ${localStorage.getItem("auth_token")}`
                 },
-                body: JSON.stringify(userFormData)
-              });
-            })
-            .then(() => navigate(`/studentnamelist`)) // Navigate after successful update
-            .catch(error => {
-              // Handle errors if necessary
-              console.error("Error:", error);
-            });
-        }}
-        className="btn btn-primary"
-      >
-        Save
-      </button>
-      <button onClick={() => navigate(`/studentnamelist`)}> Cancel </button>
+                body: JSON.stringify(studentFormData)
+              })
+                .then(() => {
+                  return fetch(`http://localhost:8000/users/${studentId}`, {
+                    method: "PUT",
+                    headers: {
+                      "Content-Type": "application/json",
+                      "Authorization": `Token ${localStorage.getItem("auth_token")}`
+                    },
+                    body: JSON.stringify(userFormData)
+                  });
+                })
+                .then(() => navigate(`/studentnamelist`))
+                .catch((error) => {
+                  console.error("Error:", error);
+                });
+            }}
+            className="button is-primary"
+          >
+            Save
+          </button>
+        </div>
+        <div className="control">
+          <button onClick={() => navigate(`/studentnamelist`)} className="button is-danger">Cancel</button>
+        </div>
+      </div>
     </form>
   );
 };

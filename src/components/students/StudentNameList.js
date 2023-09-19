@@ -39,15 +39,25 @@ export const StudentNameList = () => {
     );
   };
 
+  const getBackgroundColorClass = (writingPotential) => {
+    if (writingPotential > 8) {
+      return "has-background-success-light";
+    } else if (writingPotential > 3) {
+      return "has-background-warning-light";
+    } else {
+      return "has-background-danger-light";
+    }
+  };
+
   return (
     <div className="container">
       <h2 className="title is-2">Student Information</h2>
       <div className="columns is-multiline">
         {students.map((student) => (
           <div className="column is-one-third" key={student.id}>
-            <div className="card">
-              <div className="card-content">
-                <header className="title is-4">
+          <div className={`card ${getBackgroundColorClass(student.overall_potential)}`} key={student.id}>
+              <div className={`card-content ${getBackgroundColorClass(student.overall_potential)}`}>
+                <header className="title is-5">
                   <Link to={`/editstudentprofile/${student.id}`}>{student.full_name}</Link>
                 </header>
                 <div>Email: {student?.user?.email}</div>
@@ -67,9 +77,9 @@ export const StudentNameList = () => {
           </div>
         ))}
       </div>
-      <button className="button is-primary" onClick={() => navigate("/studentform")}>
+      {/* <button className="button is-primary" onClick={() => navigate("/studentform")}>
         Create New Student
-      </button>
+      </button> */}
     </div>
   );
 };

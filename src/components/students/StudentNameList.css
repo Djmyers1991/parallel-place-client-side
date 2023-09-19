@@ -1,28 +1,82 @@
-
 .container {
-    margin-top: 20px;
-  }
-  
-  .card {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-content {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10px;
+}
+.vocab-page-container {
     padding: 20px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+  }
+  
+  /* Style the title */
+  .title-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .title-box {
+    background-color: #ff3860;
+    padding: 10px;
+    border-radius: 5px;
   }
   
   .title {
+    color: #fff;
     font-size: 1.5rem;
+    text-align: center;
   }
   
-  .card-content div {
-    margin-top: 10px;
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   
-  .card-footer-item {
+  .vocab-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .package {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-front {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .card-header-title {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .card-back {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .card-back section {
+    font-size: 1rem;
+  }
+  
+  .delete-button {
     background-color: #ff3860;
     color: #fff;
     border: none;
@@ -31,12 +85,41 @@
     transition: background-color 0.3s ease;
   }
   
-  .card-footer-item:hover {
+  .delete-button:hover {
     background-color: #e2264d;
   }
   
-  /* Style the "Create New Student" button */
-  .button.is-primary {
+  .create-word-container {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
   }
   
+  .button.is-primary {
+    background-color: #ff3860;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button.is-primary:hover {
+    background-color: #e2264d;
+  }
+  
+  .card-content {
+    font-size: larger;
+  }
+
+  .green-bg {
+    background-color: green;
+  }
+  
+  .orange-bg {
+    background-color: orange;
+  }
+  
+  .red-bg {
+    background-color: red;
+  }
