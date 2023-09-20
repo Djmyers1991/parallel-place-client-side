@@ -1,54 +1,22 @@
-.container {
+.student-list-container {
     font-family: 'Times New Roman', Times, serif;
     font-size: 10px;
+    align-items: center
 }
-.vocab-page-container {
-    padding: 20px;
-    background-color: #f4f4f4;
-    min-height: 100vh;
-  }
-  
-  /* Style the title */
-  .title-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .title-box {
-    background-color: #ff3860;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
+   
   .title {
     color: #fff;
     font-size: 1.5rem;
     text-align: center;
   }
-  
-  .content-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .vocab-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .package {
-    width: calc(33.33% - 20px);
-    margin-bottom: 20px;
-    position: relative;
-  }
-  
+    
   .card {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    margin: 10px 0; /* Add margin to create space above and below each card */
+    padding-bottom: 40px; /* Add padding to the bottom of each card */
   }
   
   .card:hover {
@@ -65,16 +33,7 @@
     font-size: 1.2rem;
     margin: 0;
   }
-  
-  .card-back {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 0 0 5px 5px;
-  }
-  
-  .card-back section {
-    font-size: 1rem;
-  }
+    
   
   .delete-button {
     background-color: #ff3860;
@@ -108,9 +67,15 @@
     background-color: #e2264d;
   }
   
-  .card-content {
-    font-size: larger;
-  }
+.card-content {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100%; 
+  font-size: larger;
+}
+
 
   .green-bg {
     background-color: green;

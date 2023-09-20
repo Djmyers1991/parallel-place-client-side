@@ -85,6 +85,7 @@ export const EditStudentSubmission = () => {
               name="submission"
               required
               className="input is-large"
+              rows="7"
               value={editedSubmission.submission}
               onChange={changeSubmissionState}
             />

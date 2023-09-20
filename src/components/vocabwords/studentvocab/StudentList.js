@@ -29,7 +29,7 @@ export const VocabListStudent = () => {
 
   return (
     <>
-      <div className="vocab-page-container">
+      <div className="student-vocab-page-container">
         <div className="title-container">
         <div className="title-box">
 

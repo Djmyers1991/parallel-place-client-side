@@ -98,6 +98,7 @@ export const StandardSubmissionForm = () => {
               class="textarea is-large"
               placeholder="Please Write Your Submission"
               rows="10"
+              name="submission"
               value={submission.submission}
               onChange={(evt) => {
                 const copy = { ...submission };

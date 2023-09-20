@@ -100,7 +100,7 @@ export const StandardSubmissionList = () => {
             key={submission.id}
           >
             <div className="card-content times-new-roman-font">
-              {!currentUser.is_staff || !submission.date_reviewed ? (
+              {!currentUser?.is_staff || !submission?.date_reviewed ? (
                 <header className="subtitle title is-3">
                   <Link to={`/editstandardsubmission/${submission.id}`}>Submission {submission.id}</Link>{" "}
                 </header>
