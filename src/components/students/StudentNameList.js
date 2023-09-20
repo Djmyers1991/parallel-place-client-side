@@ -50,7 +50,7 @@ export const StudentNameList = () => {
   };
 
   return (
-    <div className="container">
+    <div className="student-list-container">
       <h2 className="title is-2">Student Information</h2>
       <div className="columns is-multiline">
         {students.map((student) => (

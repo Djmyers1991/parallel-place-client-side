@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./TeacherInformationForm.css"; 
 
 export const EditTeacherNameList = () => {
   const { teacherId } = useParams();
@@ -21,7 +22,7 @@ export const EditTeacherNameList = () => {
         "Authorization": `Token ${localStorage.getItem("auth_token")}`
       }
     })
-      .then((response) => response.json()) // Parse the response as JSON
+      .then((response) => response.json())
       .then((teacherData) => {
         setUserFormData({
           first_name: teacherData?.user?.first_name || "",
@@ -32,151 +33,160 @@ export const EditTeacherNameList = () => {
           bio: teacherData.bio || "",
           favorite_book: teacherData.favorite_book || "",
           representing_image: teacherData.representing_image || ""
-
         });
       })
       .catch((error) => {
-        // Handle any errors here, e.g., show an error message or redirect
         console.error("Error fetching teacher data:", error);
       });
   }, [teacherId]);
 
   const changeTeacherState = (domEvent) => {
-    // Update the specific field in the new teacher state
     const { name, value } = domEvent.target;
     setTeacherFormData({ ...teacherFormData, [name]: value });
   };
 
   const changeUserState = (domEvent) => {
-    // Update the specific field in the new user state
     const { name, value } = domEvent.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
 
   return (
-    <form className="teacherForm column">
-      <h2 className="teacherFormHeader title">Update Teacher Profile</h2>
+    <form className="studentForm column">
+      <h2 className="title is-2">Update Teacher Profile</h2>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="email" className="subtitle">Email: </label>
+      <div className="field">
+        <label className="label is-size-4">Email:</label>
+        <div className="control">
           <input
             type="text"
             name="email"
             required
-            className="form-control input"
+            className="input"
             value={userFormData.email}
             onChange={changeUserState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="first_name" className="subtitle">First Name: </label>
+      <div className="field">
+        <label className="label is-size-4">First Name:</label>
+        <div className="control">
           <input
             type="text"
             name="first_name"
             required
-            className="form-control input"
+            className="input"
             value={userFormData.first_name}
             onChange={changeUserState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="last_name" className="subtitle">Last Name: </label>
+      <div className="field">
+        <label className="label is-size-4">Last Name:</label>
+        <div className="control">
           <input
             type="text"
             name="last_name"
             required
-            className="form-control input"
+            className="input"
             value={userFormData.last_name}
             onChange={changeUserState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="bio" className="subtitle">Biography: </label>
-          <input
+      <div className="field">
+        <label className="label is-size-4">Biography:</label>
+        <div className="control">
+          <textarea
             type="text"
+            class = "textarea is-medium"
+            rows = "5"
             name="bio"
             required
-            className="form-control input"
             value={teacherFormData.bio}
             onChange={changeTeacherState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="favorite_book" className="subtitle">Favorite Book: </label>
+      <div className="field">
+        <label className="label is-size-4">Favorite Book:</label>
+        <div className="control">
           <input
             type="text"
             name="favorite_book"
             required
-            className="form-control input"
+            className="input"
             value={teacherFormData.favorite_book}
             onChange={changeTeacherState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="representing_image" className="subtitle">Representing Image: </label>
+      <div className="field">
+        <label className="label is-size-4">Representing Image:</label>
+        <div className="control">
           <input
             type="text"
             name="representing_image"
             required
-            className="form-control input"
+            className="input is-link"
+            placeholder="Link input"
+
             value={teacherFormData.representing_image}
             onChange={changeTeacherState}
           />
         </div>
-      </fieldset>
+      </div>
 
-      <button
-        type="submit"
-        onClick={evt => {
-          evt.preventDefault(); // Prevent form submission
 
-          // Send the updated teacher data to the server
-          fetch(`http://localhost:8000/teachers/${teacherId}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Token ${localStorage.getItem("auth_token")}`
-            },
-            body: JSON.stringify(teacherFormData)
-          })
-            .then(() => {
-              // Send the updated user data to the server after the teacher data update is successful
-              return fetch(`http://localhost:8000/users/${teacherId}`, {
+
+
+
+
+
+
+
+      <div className="field is-grouped">
+        <div className="control">
+          <button
+            type="submit"
+            onClick={(evt) => {
+              evt.preventDefault();
+              fetch(`http://localhost:8000/teachers/${teacherId}`, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
                   "Authorization": `Token ${localStorage.getItem("auth_token")}`
                 },
-                body: JSON.stringify(userFormData)
-              });
-            })
-            .then(() => navigate(`/teachernamelist`)) // Navigate after successful update
-            .catch(error => {
-              // Handle errors if necessary
-              console.error("Error:", error);
-            });
-        }}
-        className="btn btn-primary"
-      >
-        Save
-      </button>
-      <button onClick={() => navigate(`/teachernamelist`)}> Cancel </button>
+                body: JSON.stringify(teacherFormData)
+              })
+                .then(() => {
+                  return fetch(`http://localhost:8000/users/${teacherId}`, {
+                    method: "PUT",
+                    headers: {
+                      "Content-Type": "application/json",
+                      "Authorization": `Token ${localStorage.getItem("auth_token")}`
+                    },
+                    body: JSON.stringify(userFormData)
+                  });
+                })
+                .then(() => navigate(`/teachernamelist`))
+                .catch((error) => {
+                  console.error("Error:", error);
+                });
+            }}
+            className="button is-primary"
+          >
+            Save
+          </button>
+        </div>
+        <div className="control">
+          <button onClick={() => navigate(`/teachernamelist`)} className="button is-danger">Cancel</button>
+        </div>
+      </div>
     </form>
   );
 };
