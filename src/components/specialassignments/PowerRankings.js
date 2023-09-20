@@ -59,31 +59,67 @@ export const PowerRankings = () => {
     // Perform any other actions needed to reset data or styles here
   };
 
+  const getBackgroundColorClass = (index) => {
+    if (index + 1 <= 5) {
+      return "has-background-success-light";
+    } else if (index + 1 <= 10) {
+      return "has-background-warning-light";
+    } else {
+      return "has-background-danger-light";
+    }
+  };
+
+  const getBackgroundColorBadge = (index) => {
+    if (index + 1 <= 5) {
+      return "has-background-success";
+    } else if (index + 1 <= 10) {
+      return "has-background-warning";
+    } else {
+      return "has-background-danger";
+    }
+  };
+
+
+
   return (
     <>
-      <h1 className="powerRankings">Power Rankings</h1>
-      <article className="rankings">
+   
+      <h1 className="powerRankings title is-2">       Power Rankings    </h1>
+
+      <article className="rankings title is-1">
         {characters.map((character, index) => (
           <div
             key={character.id}
-            className="list-item teal-note-card" // Apply custom styling class
+            className={`list-item power-rank-card ${getBackgroundColorClass(index)}`}
             draggable
             onDragStart={(e) => (dragItem.current = index)}
             onDragEnter={(e) => (dragOverItem.current = index)}
             onDragEnd={handleSort}
             onDragOver={(e) => e.preventDefault()}
           >
-            <i className="list-item-character"></i>
-            <h3> {index + 1}. {character.name} </h3>
+            <div className={`rank-badge ${getBackgroundColorBadge(index)}`}>
+              <span className="rank-number">{index + 1}</span>
+            </div>
+     
+            <h3 className="ranked-character">{character.name}</h3>
+            <div className={`rank-badge ${getBackgroundColorBadge(index)}`}>
+            <span className="rank-number">{index + 1}</span>
+            </div>
+
+
           </div>
+
         ))}
-        <div>----------------------------------------</div>
         {currentUser && currentUser.is_staff === true ? (
-          <button onClick={resetLocalStorage}>Reset Local Storage</button>
+          <button onClick={resetLocalStorage} className="reset-button">
+            Reset Local Storage
+          </button>
         ) : (
           ""
         )}
       </article>
     </>
   );
+  
+  
 };
