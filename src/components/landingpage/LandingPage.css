@@ -19,7 +19,7 @@
   .title {
     font-family: 'Times New Roman', serif;
     text-align: center;
-    font-size: 42px;
+    font-size: 35px;
 
   }
   
@@ -86,4 +86,20 @@ body {
     opacity: 1;
   }
   
- 
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-5px, 0); }
+  20% { transform: translate(5px, 0); }
+  30% { transform: translate(-5px, 0); }
+  40% { transform: translate(5px, 0); }
+  50% { transform: translate(-5px, 0); }
+  60% { transform: translate(5px, 0); }
+  70% { transform: translate(-5px, 0); }
+  80% { transform: translate(5px, 0); }
+  90% { transform: translate(-5px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
