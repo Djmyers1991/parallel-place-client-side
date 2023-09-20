@@ -4,8 +4,20 @@ import "./LandingPage.css";
 
 export const LandingPageGreeting = () => {
   const [bios, setBios] = useState([]);
+  const [allBios, setAllBios] = useState([]);
   const [number, setNumber] = useState(0);
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/abouttheauthors`, {
+      headers: {
+        Authorization: `Token ${localStorage.getItem("auth_token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((bio) => setAllBios(bio));
+  }, []);
 
   useEffect(() => {
     fetch(`http://localhost:8000/abouttheauthors/${number}`, {
@@ -17,9 +29,26 @@ export const LandingPageGreeting = () => {
       .then((bio) => setBios(bio));
   }, [number]);
 
+  const jigglingFunction = () => {
+    if (document.querySelector('.container')) {
+      document.querySelector('.container').classList.add('shake');
+      setTimeout(() => {
+        document.querySelector('.container').classList.remove('shake');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 500);
+    }
+  }
+
+  console.log(allBios.length)
+
   const handleButtonClick = () => {
     setNumber(number + 1);
+    if (allBios.length > number || number === 0) {
+      jigglingFunction();
+    }
+
   };
+
 
   return (
     <div className="landing-page">
@@ -36,23 +65,26 @@ export const LandingPageGreeting = () => {
                   bodyguard and solo-shower privileges. As <s>I'm</s> Dave is a sixteen year-old boy in jail,
                   <s>I</s> he doesn’t want to lose these perks. As <s>I'm</s> Dave is a sixteen year-old boy
                   in general, <s>I</s> he doesn’t believe in self-reflection. Please don’t judge me.
-                  I have ADD. The End. I did a real bad job writing my own about the author. <br></br> Time to go back in time and try again. See button below.
+                  I have ADD. The End. I did a real bad job writing my own about the author. Time to go back in time and try again. See button below.
                 </p>
                 <div className="page-number">Page 1</div> <div> </div>
               </div>
-              
+
             ) : (
               <div className="box bio-box">
                 <p className="italicized">
                   {bios.introduction}
                 </p>
                 <div className="page-number">Page 1 Again</div> <div> </div>
-              </div>             
+              </div>
             )}
             <div className="divider"></div>
-            <button className="button is-primary" onClick={handleButtonClick}>
-              Time Travel Button
-            </button>
+
+            <div className="has-text-centered">
+              <button className="button is-primary" onClick={handleButtonClick}>
+                Time Travel Button  </button>
+            </div>
+
           </div>
         </div>
       </section>
