@@ -90,4 +90,4 @@ export const LandingPageGreeting = () => {
       </section>
     </div>
   )
-};
+}
