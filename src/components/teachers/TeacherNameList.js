@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { deleteTeacher, getTeachers } from "../../managers/teachers";
 import { getUserByToken } from "../../managers/tokens";
-import "./TeacherNameList.css"; // Import your CSS file here for custom styling
+import "./TeacherNameList.css";
 
 export const TeacherNameList = () => {
   const [teachers, setTeachers] = useState([]);

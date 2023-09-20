@@ -25,7 +25,7 @@ export const AssignmentList = () => {
       <h2 className="title is-2">Assignments</h2>
       <div className="columns is-multiline">
         {assignments.map((assignment) => (
-          <div className="column is-half" key={assignment.id}>
+          <div className="column is-full" key={assignment.id}>
             <div className="assignment-custom-card">
               <div className="card-content">
                 <header className="title is-5">

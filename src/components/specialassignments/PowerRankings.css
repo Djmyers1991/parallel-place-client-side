@@ -1,19 +1,69 @@
+/* Power Rankings Container */
+.power-rankings {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center the text horizontally */
+}
 
+/* Individual Ranking Card */
+.power-rank-card {
+  background-color: #ffffff;
+  width: 500px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  margin-left: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  font-family: 'Times New Roman', Times, serif;
+  transition: background-color 0.5s ease, transform 0.9s ease; 
 
-.teal-note-card {
-    background-color: teal;
-    color: white;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  }
   
-  .powerRankings {
-    /* Add any additional styles for the header here */
-  }
-  
-  .rankings {
-    /* Add any additional styles for the rankings container here */
-  }
-  
+
+}
+
+.rank-badge {
+  color: white;
+  border-radius: 60%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 15px;
+}
+
+.power-rank-card:hover {
+  background-color: #f0f0f0; 
+  transform: scale(1.05); /* Add a scale effect on hover */
+}
+
+.ranked-character {
+  font-size: 1.2rem;
+  font-weight: bold;
+  flex-grow: 1; /* Expand to fill available space */
+  text-align: center; /* Center the text horizontally */
+}
+
+/* Reset Button (if needed) */
+.reset-button {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.power-rank-card:active {
+  transform: scale(1.05); /* Enlarge the card when active (clicked and dragged) */
+}
