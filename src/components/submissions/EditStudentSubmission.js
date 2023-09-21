@@ -80,7 +80,7 @@ export const EditStudentSubmission = () => {
         <div className="field">
           <label className="label is-size-3">Submission</label>
           <div className="control">
-            <input
+            <textarea
               type="text"
               name="submission"
               required

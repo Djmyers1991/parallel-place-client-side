@@ -1,13 +1,13 @@
 .has-red-border {
-    border: 3.5px solid red; 
-    margin-right: 10px; 
-    margin-bottom: 10px; 
+    border: 3px solid red; 
+    margin-right: 5px; 
+    margin-bottom: 5px; 
   }
   
   .has-green-border {
-    border: 3.5px solid green; 
-    margin-right: 10px; 
-    margin-bottom: 10px; 
+    border: 3px solid green; 
+    margin-right: 5px; 
+    margin-bottom: 5px; 
   }
   
 
@@ -34,9 +34,9 @@
   }
   
   .currently-reviewing {
-    border: 3.5px solid navy; 
-    margin-right: 10px;
-    margin-bottom: 10px; 
+    border: 3px solid navy; 
+    margin-right: 5px;
+    margin-bottom: 5px; 
   }  
 
   .box:hover {
@@ -48,3 +48,15 @@
     padding: 3px; 
   
   }
+  
+
+  /* Individual Submission Card */
+.submission-card {
+width: 700px;
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: 10px auto;
+
+}

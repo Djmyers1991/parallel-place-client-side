@@ -48,7 +48,7 @@ export const StudentInspirationList = () => {
   };
 
   return (
-    <div className="inspiration-container">
+    <div className="inspiration-container ">
       <h2 className="title is-3 teacher-title">Inspiration List of {currentUser?.first_name} {currentUser?.last_name}</h2>
       <div className="inspiration-column">
         {inspirations.map((inspiration) => (
@@ -64,7 +64,7 @@ export const StudentInspirationList = () => {
                   <img  src={inspiration.image} alt="Random Image" />
                 </div>
                 <div>
-                  Relevancy Score (must add up to 100): {inspiration.relevance_scale}
+                  Relevancy Score: {inspiration.relevance_scale}
                 </div>
                 <div>
                   Explanation: {inspiration.explanation}

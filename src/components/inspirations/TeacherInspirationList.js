@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getUserByToken } from "../../managers/tokens";
 import { deleteInspiration } from "../../managers/inspirations";
 import { getStudents } from "../../managers/students";
+import "./StudentInspirationList.css"; // Import your CSS file here for custom styling
 
 export const TeacherInspirationList = () => {
   const [inspirations, setInspirations] = useState([]);
@@ -53,46 +54,58 @@ export const TeacherInspirationList = () => {
     };
 
     return (
-      <button onClick={handleDelete}>
+      <button className="button is-danger is-small" onClick={handleDelete}>
         Delete
       </button>
     );
   };
 
   return (
-    <>
-      <div className="column" style={{ margin: "0rem 3rem" }}>
-        <h1 className="title">Inspiration List</h1>
-        <div className="form-group">
-          <label htmlFor="category" className="subtitle">Students: </label>
-          <select name="category" className="form-control select" onChange={handleStudentChange}>
+    <div className="inspiration-container">
+      <h1 className="title is-1 is-centered is-text-large">Student Inspiration Lists</h1>
+      <div className="form-group">
+        <label htmlFor="category" className="subtitle is-3 inspiration-subtitle">Students: </label>
+        <div className="select is-fullwidth is-centered">
+          <select name="category" className="select" onChange={handleStudentChange}>
             <option value={0}>Select a student</option>
             {students.map((student) => (
-              <option key={`studentFilter--${student.id}`} value={student.id}>
+              <option  key={`studentFilter--${student.id}`} value={student.id} className="inspiration_dropdown_student"> 
                 {student.full_name}
               </option>
             ))}
           </select>
         </div>
-        <article className="inspiration">
-          {inspirations.map((inspiration) => (
-            <section className="inspirations" key={inspiration.id}>
-              <header>
-                {inspiration?.student?.full_name}'s Inspirations:{" "}
-               <div> {inspiration.novel} by {inspiration.author}</div>
-              </header>
-              <div>
-                <img src={inspiration.image} alt="random image" />
-              </div>
-              <div>Relevancy Score (must add up to 100): {inspiration.relevance_scale}</div>
-              <div>Explanation: {inspiration.explanation}</div>
-              <footer>{deleteButton(inspiration)}</footer>
-              <div>----------------------------------------</div>
-            </section>
-          ))}
-          <button onClick={() => { navigate('/inspirationform') }}>Create Inspiration</button>
-        </article>
       </div>
-    </>
+      <div className="inspiration-column">
+        {inspirations.map((inspiration) => (
+          <div className="column is-half" key={inspiration.id}>
+            <div className="inspiration-card">
+              <div className="card-content">
+                  <header className="title is-3"> {inspiration.novel} by {inspiration.author}
+</header>
+                 
+                <div>
+                  <img  src={inspiration.image} alt="Random Image" />
+                </div>
+                <div>
+                  Relevancy Score: {inspiration.relevance_scale}
+                </div>
+                <div>
+                  Explanation: {inspiration.explanation}
+                </div>
+              </div>
+              <footer className="card-footer button is-large has-text-centered">
+                {deleteButton(inspiration)}
+              </footer>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="buttons is-centered inspiration-create-button">
+        <button className="button is-primary " onClick={() => navigate('/inspirationform')}>
+          Create Inspiration
+        </button>
+      </div>
+    </div>
   );
 };
