@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAssignments } from "../../managers/assignments";
 import { getUserByToken } from "../../managers/tokens";
@@ -19,6 +19,13 @@ export const StandardSubmissionForm = () => {
     date_reviewed: null,
   });
 
+  const selectRef = useRef(null);
+
+  useEffect(() => {
+    if (selectRef.current) {
+      selectRef.current.focus();
+    }
+  }, []);
   useEffect(() => {
     if (token) {
       getUserByToken(token).then((data) => setCurrentUser(data.user));
@@ -67,11 +74,11 @@ export const StandardSubmissionForm = () => {
       <h2 className="title is-2">Submission</h2>
       <form>
         <div className="field">
-        <label className="label is-size-3">Assignment</label>
+          <label className="label is-size-3">Assignment</label>
           <div className="control">
             <div className="select">
               <select
-                value={submission.assignment.id}
+                ref={selectRef} value={submission.assignment.id}
                 onChange={(evt) => {
                   const copy = { ...submission };
                   copy.assignment = parseInt(evt.target.value);
@@ -112,7 +119,7 @@ export const StandardSubmissionForm = () => {
         <div className="field">
           <div className="control">
             <button className="button is-primary button is-large buttons is-center" onClick={handleSaveButtonClick}>
-              Submit 
+              Submit
             </button>
           </div>
         </div>

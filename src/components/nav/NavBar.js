@@ -31,16 +31,15 @@ export const NavBar = ({ token, setToken }) => {
               ?
               <>
 
-                <Link to="/studentnamelist" className="navbar-item">Students</Link>
-                <Link to="/teachernamelist" className="navbar-item">Teachers</Link>
+
                 <Link to="/assignmentlist" className="navbar-item">Assignments</Link>
 
 
                 <Link to="/standardsubmissionslist" className="navbar-item">Submissions</Link>
-                <Link to="/studentinspirationlist" className="navbar-item">Inspiration List</Link>
-
+                <Link to="/studentnamelist" className="navbar-item">Book Club Leaders</Link>
+                <Link to="/teachernamelist" className="navbar-item">Teachers</Link>
                 <Link to="/words" className="navbar-item">Vocabulary Words</Link>
-
+                <Link to="/studentinspirationlist" className="navbar-item">Inspiration List</Link>
                 <Link to="/powerrankings" className="navbar-item">Power Rankings</Link>
 
 
