@@ -73,7 +73,7 @@ export const StudentSubmissionList = () => {
                     >
                         <div className="card-content times-new-roman-font">
                             {
-                                !currentUser.is_staff && !submission.date_reviewed ? (
+                                !currentUser?.is_staff && !submission?.date_reviewed ? (
                                     <header className="subtitle title is-3">
                                         <Link to={`/editstandardsubmission/${submission.id}`}>
                                             Submission {submission.id}
@@ -90,20 +90,23 @@ export const StudentSubmissionList = () => {
                                 {submission?.assignment?.title} Assignment Instructions: <br></br> {submission?.assignment?.assignment_instructions}
                             </div>
                             <div className="box darker-border">
-                                Submission: {submission.submission}
+                                Submission: <br></br> {submission.submission}
                             </div>
                             {submission.date_reviewed !== null ? (
                                 <>
                                     <div className="box darker-border">
-                                        Feedback: {submission.teacher_feedback}
+                                        Feedback: <br></br> {submission.teacher_feedback}
                                     </div>
                                     <div className="box darker-border">
+                                        Submission Review Complete: <br></br>
                                         This essay was reviewed by {submission?.teacher?.full_name} on {submission.date_reviewed}.
                                     </div>
                                 </>
                             ) : null}
                             {!currentUser?.is_staff && submission.date_reviewed === null ? (
                                 <div className="box darker-border">
+                                    
+                                    Review: In-Progress<br></br>
                                     Your assignment hasn't yet been ruthlessly judged with extreme niceties that border on condescension. You know how we English people do.
                                 </div>
                             ) : null}

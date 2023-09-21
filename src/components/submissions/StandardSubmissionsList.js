@@ -114,11 +114,12 @@ export const StandardSubmissionList = () => {
               <div className="box darker-border">
                 {submission?.assignment?.title} Assignment Instructions:  <br></br> {submission?.assignment?.assignment_instructions}
               </div>
-              <div className="box darker-border">Response: {submission.submission}</div>
+              <div className="box darker-border">Response: <br></br>{submission.submission}</div>
               {submission.date_reviewed !== null ? (
                 <>
-                  <div className="box darker-border">Feedback: {submission.teacher_feedback}</div>
+                  <div className="box darker-border">Feedback: <br></br> {submission.teacher_feedback}</div>
                   <div className="box darker-border">
+                    Submission Complete: <br></br>
                     This essay was reviewed by {submission?.teacher?.full_name} on {submission.date_reviewed}.
                   </div>
                 </>
@@ -127,6 +128,7 @@ export const StandardSubmissionList = () => {
               )}
               {!currentUser?.is_staff && submission.date_reviewed === null && !submission.teacher ? (
                 <div className="box darker-border">
+                  Submission Progress: <br></br>
                   Your assignment hasn't yet been ruthlessly judged with extreme niceties that border on condescension. You know how we English people do.
                 </div>
               ) : (
@@ -134,6 +136,8 @@ export const StandardSubmissionList = () => {
               )}
               {submission.date_reviewed === null && submission.teacher ? (
                 <div className="box darker-border">
+                  Submission Currently In-Progress: <br></br>
+
                   Your assignment is currently being reviewed by {submission?.teacher?.full_name}.
                 </div>
               ) : (

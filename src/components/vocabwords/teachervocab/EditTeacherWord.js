@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-
 export const EditTeacherWord = () => {
     const { wordId } = useParams();
     const [newWord, setWord] = useState({
@@ -9,7 +8,6 @@ export const EditTeacherWord = () => {
         definition: "",
         creator: 0,
     });
-    const [correctId, setId] = useState()
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,71 +18,78 @@ export const EditTeacherWord = () => {
         })
         .then(res => res.json())
         .then((wordData) => {
-            setWord(wordData)
+            setWord(wordData);
         })
         .catch((error) => {
-            // Handle any errors here, e.g., show an error message or redirect
             console.error("Error fetching word data:", error);
         });
-    }, []);
-    
+    }, [wordId]);
 
-  
     const changeWordState = (domEvent) => {
-        // Update the specific field in the newPost state
         const updatedWord = { ...newWord };
         updatedWord[domEvent.target.name] = domEvent.target.value;
         setWord(updatedWord);
-    }
+    };
+
     return (
-        <form className="postForm column">
-            <h2 className="postFormHeader title">Edit a Word</h2>
-
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="word" className="subtitle">Update Word: </label>
-                    <input type="text" name="name" required className="form-control input"
-                        value={newWord.name}
-                        onChange={changeWordState}
-                    />
+        <div className="container">
+            <h2 className="title is-2">Edit a Word</h2>
+            <form>
+                <div className="field">
+                    <label className="label">Update Word:</label>
+                    <div className="control">
+                        <input
+                            type="text"
+                            name="name"
+                            className="input"
+                            required
+                            value={newWord.name}
+                            onChange={changeWordState}
+                        />
+                    </div>
                 </div>
-            </fieldset>
-
-
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="definition" className="subtitle">Definition: </label>
-                    <input type="text" name="definition" required className="form-control input"
-                        value={newWord.definition}
-                        onChange={changeWordState}
-                    />
+                <div className="field">
+                    <label className="label">Definition:</label>
+                    <div className="control">
+                        <input
+                            type="text"
+                            name="definition"
+                            className="input"
+                            required
+                            value={newWord.definition}
+                            onChange={changeWordState}
+                        />
+                    </div>
                 </div>
-            </fieldset>
-            <button
-                type="submit"
-                onClick={evt => {
-                    evt.preventDefault(); // Prevent form submission
-                    const updatedWord = {
-                        creator: newWord?.creator?.id, // Use the correct property from the state
-                        name: newWord.name,
-                        definition: newWord.definition
-                    };
-                    // Send the updated comment data to the server
-                    fetch(`http://localhost:8000/vocabwords/${newWord.id}`, {
-                        method: "PUT",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Authorization": `Token ${localStorage.getItem("auth_token")}`
-                        },
-                        body: JSON.stringify(updatedWord)
-                    })
-                        .then(() => navigate(`/words`)); // Navigate after successful update
-                }}
-                className="btn btn-primary"
-            >
-                Save
-            </button>
-            <button onClick={() => navigate(`/words`)}> Cancel </button>
-        </form>
+                <div className="field">
+                    <div className="control">
+                        <button
+                            type="submit"
+                            onClick={(evt) => {
+                                evt.preventDefault();
+                                const updatedWord = {
+                                    creator: newWord?.creator?.id,
+                                    name: newWord.name,
+                                    definition: newWord.definition
+                                };
+                                fetch(`http://localhost:8000/vocabwords/${newWord.id}`, {
+                                    method: "PUT",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "Authorization": `Token ${localStorage.getItem("auth_token")}`
+                                    },
+                                    body: JSON.stringify(updatedWord)
+                                })
+                                .then(() => navigate(`/words`));
+                            }}
+                            className="button is-primary "
+                        >
+                            Save
+                        </button>
+                        <button onClick={() => navigate(`/words`)} className="button is-danger ml-5">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     );
 };

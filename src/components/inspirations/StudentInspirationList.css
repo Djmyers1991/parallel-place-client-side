@@ -17,7 +17,7 @@
 .inspiration-card {
   background-color: #ffffff;
   width: 700px;
-  border: 1px solid #e0e0e0;
+  border: 5px solid goldenrod;
   border-radius: 8px;
   margin: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -28,5 +28,15 @@
 }
 
 .inspiration_dropdown_student{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.select {
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 30px;
+
+}
+
+.times-new-roman-font {
   font-family: 'Times New Roman', Times, serif;
 }

@@ -1,7 +1,10 @@
 .student-list-container {
     font-family: 'Times New Roman', Times, serif;
     font-size: 10px;
-    align-items: center
+    align-items: center;
+    margin:5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
    
   .title {

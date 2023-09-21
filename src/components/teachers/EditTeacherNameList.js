@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./TeacherInformationForm.css"; 
+import "./TeacherNameList.css";
+
 
 export const EditTeacherNameList = () => {
   const { teacherId } = useParams();
@@ -97,11 +98,11 @@ export const EditTeacherNameList = () => {
       </div>
 
       <div className="field">
-        <label className="label is-size-4">Biography:</label>
-        <div className="control">
+        <label className="label is-size-4 ">Biography:</label>
+        <div className="control ">
           <textarea
             type="text"
-            class = "textarea is-medium"
+            class = "textarea is-medium times-new-roman-font"
             rows = "5"
             name="bio"
             required
@@ -126,7 +127,7 @@ export const EditTeacherNameList = () => {
       </div>
 
       <div className="field">
-        <label className="label is-size-4">Representing Image:</label>
+        <label className="label  is-size-4">Representing Image:</label>
         <div className="control">
           <input
             type="text"

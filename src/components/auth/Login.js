@@ -43,14 +43,14 @@ export const Login = ({ setToken, setStaff }) => {
         <h1 className="title">This Parallel Place Book Club</h1>
 
         <div className="field">
-          <label className="label">Username</label>
+          <label className="label is-medium">Email</label>
           <div className="control">
             <input className="input" type="text" ref={username} />
           </div>
         </div>
 
         <div className="field">
-          <label className="label">Password</label>
+          <label className="label is-medium">Password</label>
           <div className="control">
             <input className="input" type="password" ref={password} />
           </div>

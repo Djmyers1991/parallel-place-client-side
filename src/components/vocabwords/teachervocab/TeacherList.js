@@ -43,13 +43,23 @@ export const VocabListTeacher = () => {
                 <div className="card">
                   <div className="card-front">
                     <header className="card-header">
+                      { !word?.creator?.is_staff ?
+                      (
                       <p className="card-header-title">
-                        <Link to={`/editword/${word.id}`}>{word.name}</Link>
+                        <Link to={`/editword/${word.id}`}>{word.name} ({word?.creator?.last_name})</Link>
                       </p>
+                      )
+                      : (
+                        <p className="card-header-title">
+                        <Link to={`/editword/${word.id}`}>{word.name} </Link>
+                      </p>
+                      )
+          }
                     </header>
                   </div>
                   <div className="card-back">
-                    <section>{word.definition}</section>
+                    <section> <Link to={`/editword/${word.id}`}>{word.definition}</Link>
+</section>
                     {deleteButton(word)}
 
                   </div>
@@ -59,7 +69,7 @@ export const VocabListTeacher = () => {
           })}
         </article>
         <div className="create-word-container">
-          <button className="button is-primary" onClick={() => navigate('/wordsform')}>
+          <button className="button button-margin is-primary is-medium" onClick={() => navigate('/wordsform')}>
             Create New Word
           </button>
         </div>

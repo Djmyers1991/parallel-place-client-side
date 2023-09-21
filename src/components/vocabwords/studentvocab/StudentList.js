@@ -31,9 +31,9 @@ export const VocabListStudent = () => {
     <>
       <div className="student-vocab-page-container">
         <div className="title-container">
-        <div className="title-box">
+        <div className="title-box has-text-centered">
 
-          <h2 className="title is-3 has-text-black">Vocabulary Notecards</h2>
+          <h2 className="title is-3  has-text-black">Vocabulary Notecards</h2>
         </div>
         </div>
         <div className="content-container">
@@ -54,7 +54,15 @@ export const VocabListStudent = () => {
                       </header>
                     </div>
                     <div className="card-back">
+                    {word.creator.is_staff ? (
                       <section>{word.definition}</section>
+                      ) : (
+                        <section>
+                            <Link to={`/editword/${word.id}`}>{word.definition}</Link>
+                          </section>
+                        )}
+
+
                       {word.creator.is_staff ? "" : <footer>{deleteButton(word)}</footer>}
                     </div>
                   </div>
@@ -63,7 +71,7 @@ export const VocabListStudent = () => {
             })}
           </article>
           <div className="create-word-container">
-            <button className="button is-primary" onClick={() => navigate("/wordsform")}>
+            <button className="button is-primary is-medium button-margin" onClick={() => navigate("/wordsform")}>
               Create New Word
             </button>
           </div>

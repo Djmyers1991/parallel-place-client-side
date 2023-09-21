@@ -59,7 +59,8 @@ export const TeacherNameList = () => {
                 <div className="teacher-bio">
 
                   <img src={teacher.representing_image} alt="TeacherImage" />
-                  <div>Bio: {teacher.bio}</div>
+                  <div class="title is-4"> Some Words About Me: </div>
+                  <div> {teacher.bio}</div>
 
                 </div>
               </div>

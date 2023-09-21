@@ -64,10 +64,9 @@ export const TeacherInspirationList = () => {
     <div className="inspiration-container">
       <h1 className="title is-1 is-centered is-text-large">Student Inspiration Lists</h1>
       <div className="form-group">
-        <label htmlFor="category" className="subtitle is-3 inspiration-subtitle">Students: </label>
         <div className="select is-fullwidth is-centered">
-          <select name="category" className="select" onChange={handleStudentChange}>
-            <option value={0}>Select a student</option>
+          <select name="category" className="select is-large" onChange={handleStudentChange}>
+            <option value={0}>Select Student</option>
             {students.map((student) => (
               <option  key={`studentFilter--${student.id}`} value={student.id} className="inspiration_dropdown_student"> 
                 {student.full_name}
@@ -87,12 +86,14 @@ export const TeacherInspirationList = () => {
                 <div>
                   <img  src={inspiration.image} alt="Random Image" />
                 </div>
+
                 <div>
-                  Relevancy Score: {inspiration.relevance_scale}
+               {inspiration.explanation}
+                  <br></br>
                 </div>
-                <div>
-                  Explanation: {inspiration.explanation}
-                </div>
+                <header class="label is-medium">
+                  Relevancy Percentage: {inspiration.relevance_scale}%
+                </header>
               </div>
               <footer className="card-footer button is-large has-text-centered">
                 {deleteButton(inspiration)}
@@ -101,11 +102,11 @@ export const TeacherInspirationList = () => {
           </div>
         ))}
       </div>
-      <div className="buttons is-centered inspiration-create-button">
+      {/* <div className="buttons is-centered inspiration-create-button">
         <button className="button is-primary " onClick={() => navigate('/inspirationform')}>
           Create Inspiration
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

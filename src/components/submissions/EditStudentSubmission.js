@@ -84,7 +84,7 @@ export const EditStudentSubmission = () => {
               type="text"
               name="submission"
               required
-              className="input is-large"
+              className="textarea input is-large"
               rows="7"
               value={editedSubmission.submission}
               onChange={changeSubmissionState}
