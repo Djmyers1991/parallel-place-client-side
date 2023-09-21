@@ -63,12 +63,13 @@ export const StudentInspirationList = () => {
                 <div>
                   <img  src={inspiration.image} alt="Random Image" />
                 </div>
-                <div>
-                  Relevancy Score: {inspiration.relevance_scale}
-                </div>
+              
                 <div>
                   Explanation: {inspiration.explanation}
                 </div>
+                <header class="label is-medium">
+                  Relevancy Percentage: {inspiration.relevance_scale}%
+                </header>
               </div>
               <footer className="card-footer button is-large has-text-centered">
                 {deleteButton(inspiration)}

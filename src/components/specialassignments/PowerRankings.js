@@ -83,43 +83,40 @@ export const PowerRankings = () => {
 
   return (
     <>
-   
-      <h1 className="powerRankings title is-2">       Power Rankings    </h1>
-
-      <article className="rankings title is-1">
-        {characters.map((character, index) => (
-          <div
-            key={character.id}
-            className={`list-item power-rank-card ${getBackgroundColorClass(index)}`}
-            draggable
-            onDragStart={(e) => (dragItem.current = index)}
-            onDragEnter={(e) => (dragOverItem.current = index)}
-            onDragEnd={handleSort}
-            onDragOver={(e) => e.preventDefault()}
-          >
-            <div className={`rank-badge ${getBackgroundColorBadge(index)}`}>
-              <span className="rank-number">{index + 1}</span>
+      <h1 className="powerRankings title is-2 has-text-centered">Power Rankings</h1>
+  
+      <div className="container has-text-centered">
+        <article className="rankings title is-1 ">
+          {characters.map((character, index) => (
+            <div
+              key={character.id}
+              className={`list-item power-rank-card  ${getBackgroundColorClass(index)}`}
+              draggable
+              onDragStart={(e) => (dragItem.current = index)}
+              onDragEnter={(e) => (dragOverItem.current = index)}
+              onDragEnd={handleSort}
+              onDragOver={(e) => e.preventDefault()}
+            >
+              <div className={`rank-badge ${getBackgroundColorBadge(index)}`}>
+                <span className="rank-number">{index + 1}</span>
+              </div>
+       
+              <h3 className="ranked-character">{character.name}</h3>
+              <div className={`rank-badge ${getBackgroundColorBadge(index)}`}>
+                <span className="rank-number">{index + 1}</span>
+              </div>
             </div>
-     
-            <h3 className="ranked-character">{character.name}</h3>
-            <div className={`rank-badge ${getBackgroundColorBadge(index)}`}>
-            <span className="rank-number">{index + 1}</span>
-            </div>
-
-
-          </div>
-
-        ))}
-        {currentUser && currentUser.is_staff === true ? (
-          <button onClick={resetLocalStorage} className="reset-button">
-            Reset Local Storage
-          </button>
-        ) : (
-          ""
-        )}
-      </article>
+          ))}
+        </article>
+      </div>
+  
+      {/* {currentUser && currentUser.is_staff === true ? (
+        <button onClick={resetLocalStorage} className="reset-button">
+          Reset Local Storage
+        </button>
+      ) : (
+        ""
+      )} */}
     </>
   );
-  
-  
-};
+      }  

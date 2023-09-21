@@ -86,10 +86,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
     flex-direction: column;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAAAMFBMVEX//vn///n/gH3///+xsvza2vp1ef3j4/qmp/yHif37+/nAwfvNzft5fP3x8Pmam/wCwzSwAAAAzUlEQVR4nO3bSW4CQBADwCYbJCTh/7/lyNFHtzRVb2hb8kgzAwAAAAAAAACs9EYw7wTtIwYAAE5yIZgPgvkkELSoXYUAAMBJ2gtov/kicEVRO+cAAMBJ2gtov7kSzI1A0KJ2FQIAACdpL6D95ptgfggELWpXIQAAcJL2AtrPH5DIFUXtnAMAACdpL6D95k4wvwSCFrWrEAAAOEl7Ae03fwSuKGrnHAAAOEl7Ae03/wTzIBC0qF2FAADASdoLaD9LP/JeFAla1K5CAAAAXp4jWMLZSdP1BQAAAABJRU5ErkJggg==");
-
+    margin: 0 auto;
+    margin-bottom: 18px;
 
 
 
@@ -113,4 +113,9 @@
     padding: 10px; /* Add padding for spacing */
     border-radius: 5px; /* Add rounded corners */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+
+  .button-margin {
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 15px;
   }

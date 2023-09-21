@@ -30,15 +30,18 @@ export const NavBar = ({ token, setToken }) => {
             token  
               ?
               <>
-                <Link to="/words" className="navbar-item">Vocab Words</Link>
 
                 <Link to="/studentnamelist" className="navbar-item">Students</Link>
                 <Link to="/teachernamelist" className="navbar-item">Teachers</Link>
                 <Link to="/assignmentlist" className="navbar-item">Assignments</Link>
 
+
                 <Link to="/standardsubmissionslist" className="navbar-item">Submissions</Link>
-                <Link to="/powerrankings" className="navbar-item">Power Rankings</Link>
                 <Link to="/studentinspirationlist" className="navbar-item">Inspiration List</Link>
+
+                <Link to="/words" className="navbar-item">Vocabulary Words</Link>
+
+                <Link to="/powerrankings" className="navbar-item">Power Rankings</Link>
 
 
 

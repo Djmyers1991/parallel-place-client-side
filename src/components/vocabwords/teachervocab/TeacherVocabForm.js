@@ -81,7 +81,6 @@ export const TeacherVocabForm = () => {
                             <div className="control has-icons-left">
                                 <textarea
                                     required
-                                    autoFocus
                                     className="textarea is-success is-rounded is-focused custom-input"
                                     value={word.definition}
                                     onChange={(evt) => {

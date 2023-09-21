@@ -91,11 +91,11 @@ export const StandardSubmissionForm = () => {
 
         <div className="field">
           <label className="label is-size-3">Writing Exercise</label>
-          <div className="control">
+          <div className="control ">
             <textarea
               required
               type="text"
-              class="textarea is-large"
+              class="textarea times-new-roman-font is-large"
               placeholder="Please Write Your Submission"
               rows="10"
               name="submission"
