@@ -31,7 +31,7 @@ export const StandardSubmissionList = () => {
     };
 
     return (
-      <button className="button is-danger ml-1 mt-1 mb-1 px-4 mr-1" onClick={handleDelete}>
+      <button className="button is-danger is-medium ml-1 mt-1 mb-1 px-4 mr-1" onClick={handleDelete}>
         Delete
       </button>
     );
@@ -74,7 +74,7 @@ export const StandardSubmissionList = () => {
   return (
     <>
       <h2 className="title is-2">Submissions</h2>
-      <div className="button-container mx-4">
+      <div className="button-container mx-6">
         <button className="button is-success is-medium-small mx-1 my-1" onClick={seeUngradedSubmissions}>
           Unclaimed Submissions
         </button>

@@ -1,7 +1,65 @@
-.navbar-item img {
-   max-height: 3rem;
-}
-
-.navbar {
+.button {
    font-family: 'Times New Roman', Times, serif;
 }
+.navbar-item {
+   margin-right: 10px;
+ }
+ 
+ /* Style the buttons */
+
+ /* Customize the active hamburger icon */
+ .navbar-burger.is-active .span::before,
+ .navbar-burger.is-active .span::after {
+   background-color: green; /* Change to your desired color */
+ }
+ 
+
+ 
+ /* Customize the navbar background and text color */
+ .navbar {
+   background-color: #333; /* Change to your desired background color */
+   color: #fff; 
+   font-family: 'Times New Roman', Times, serif;
+ }
+ 
+ /* Add a hover effect to navbar items */
+ .navbar-item:hover {
+   
+   background-color: #555; /* Change to your desired hover background color */
+   color: #fff; /* Change to your desired hover text color */
+ }
+ 
+ /* Adjust the logo image size */
+ .navbar-item img {
+   max-height: 3rem;
+ }
+ 
+ /* Style the Logout button */
+
+ 
+ /* Customize the active state of the navbar */
+ .navbar.is-active {
+   background-color: #333; /* Change to your desired active background color */
+ }
+ 
+ .navbar-burger.is-active .navbar-burger-icon {
+   background-color: #fff; /* Change to your desired active icon color */
+ }
+ 
+ .navbar-burger.is-active .navbar-burger-icon::before,
+ .navbar-burger.is-active .navbar-burger-icon::after {
+   background-color: green;
+ }
+ 
+ .navbar-item:hover {
+   background-color: #48c78e;
+   color: #fff;
+ }
+
+ .navbar.is-active {
+   background-color: #2980b9;
+ }
+
+ 
+
+ 
