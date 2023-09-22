@@ -64,6 +64,7 @@ export const TeacherEvaluateSubmission = () => {
                     <div className="control">
                         <div className="select">
                             <select
+                                autoFocus
                                 className="select is-medium-small"
                                 name="assignment"
                                 value={editedSubmission.assignment}

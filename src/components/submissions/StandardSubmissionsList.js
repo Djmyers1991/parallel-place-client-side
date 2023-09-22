@@ -13,6 +13,8 @@ export const StandardSubmissionList = () => {
   useEffect(() => {
     if (token) {
       getUserByToken(token).then((data) => setCurrentUser(data.user));
+      window.scrollTo(0, 0);
+
     }
   }, [token]);
 
@@ -73,7 +75,7 @@ export const StandardSubmissionList = () => {
 
   return (
     <>
-      <h2 className="title is-2">Submissions</h2>
+      <h2 className="title is-2" autoFocus>Submissions</h2>
       <div className="button-container mx-6">
         <button className="button is-success is-medium-small mx-1 my-1" onClick={seeUngradedSubmissions}>
           Unclaimed Submissions
