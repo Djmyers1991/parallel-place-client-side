@@ -31,18 +31,7 @@ pipenv shell
 ```sh
 pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
 ```
-4. Create the project and API application (DO WE NEED THIS??????)
-```sh
-django-admin startproject rare
-python3 manage.py startapp rareapi
-```
-
-5. Migrate and seed database (DO WE NEED THIS??????)
-```sh
-chmod u+x ./seed_database.sh
-./seed_database.sh
-```
-6. Get the server running
+4. Get the server running
 ```sh
 python3 manage.py runserver
 ```
@@ -62,13 +51,13 @@ npm install
 ```sh
 npm start
 ```
-3. Login credentials: (Admin = Jonathan, Author = Chesney)
+3. Login credentials: (Teacher = Daniel, Student = Jonathan)
 ```txt
-username: 
+username: JonathanVanDuyne@aol.com
 password: lemmon
 ```
 ```txt
-username:
+username: JonathanVanDuyne@aol.com
 password: lemmon
 ```
 
