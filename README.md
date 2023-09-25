@@ -73,6 +73,4 @@ https://miro.com/app/board/uXjVMAhOHYo=/?share_link_id=268571184966
 
 ## Technologies Used
 
-4. This template is using [Bulma](https://bulma.io/documentation) for styling. 
-# parallel-place-client-side
-# parallel-place-client-side
+# parallel-place-server-side
