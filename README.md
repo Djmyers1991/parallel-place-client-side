@@ -40,7 +40,7 @@ python3 manage.py runserver
 ### Client Side
 1. Clone this repository for the client side:
 ```sh
-git clone 
+git clone git@github.com:Djmyers1991/parallel-place-client-side.git 
 cd 
 ```
 2. Install dependencies: 
@@ -63,17 +63,16 @@ password: lemmon
 
 ## ERD
 
+https://dbdiagram.io/d/Parallel-Place-Final-Capstone-64f749fd02bd1c4a5e02cc50
 
 ## Wireframe
 
-
-
-## Features
+https://miro.com/app/board/uXjVMAhOHYo=/?share_link_id=268571184966
 
 
 
 ## Technologies Used
 
-4. This template is using [Bulma](https://bulma.io/documentation) for styling. Take a little bit of time to familiarize yourself with the framework if you would like to continue using it.
+4. This template is using [Bulma](https://bulma.io/documentation) for styling. 
 # parallel-place-client-side
 # parallel-place-client-side
