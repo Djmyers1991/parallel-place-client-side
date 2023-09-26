@@ -21,7 +21,7 @@ In this application's present iteration, teachers are able to create/edit/delete
 1. Clone this repository for the server side:
 ```sh
 git clone git@github.com:Djmyers1991/parallel_place_server.git
-cd paralle_place_server
+cd parallel_place_server
 ```
 2. Initialize virtual environment:
 ```sh
