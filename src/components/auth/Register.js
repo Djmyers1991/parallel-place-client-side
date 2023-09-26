@@ -77,7 +77,7 @@ export const Register = ({ setToken, setStaff }) => {
     <section className="columns is-centered">
       <form className="column is-two-thirds" onSubmit={handleRegister}>
         <h1 className="title">Parallel Place Book Club</h1>
-        <p className="subtitle">Create an account</p>
+        <header className="title is-4">Create an Account</header>
         <div className="field">
           <label className="label">Account Type</label>
           <div className="control">
