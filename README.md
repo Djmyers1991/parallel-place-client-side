@@ -41,7 +41,7 @@ python3 manage.py runserver
 1. Clone this repository for the client side:
 ```sh
 git clone git@github.com:Djmyers1991/parallel-place-client-side.git 
-cd 
+cd parallel-place-client-side
 ```
 2. Install dependencies: 
 ```sh
