@@ -33,7 +33,7 @@ pipenv install
 ```
 4. Seed database with initial fixtures:
 ```sh
-   ./seed_database.sh
+./seed_database.sh
 ```
    
 5. Run the Server:
