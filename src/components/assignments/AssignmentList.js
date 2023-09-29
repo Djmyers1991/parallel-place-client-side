@@ -29,7 +29,7 @@ export const AssignmentList = () => {
             <div className="assignment-custom-card">
               <div className="card-content">
                 <header className="title is-5">
-                  {currentUser.is_staff ? (
+                  {currentUser?.is_staff ? (
                     <Link to={`/editassignment/${assignment.id}`}> {assignment.title}</Link>
                   ) : (
                     <Link to={`/standardassignmentform`}> {assignment.title}</Link>
