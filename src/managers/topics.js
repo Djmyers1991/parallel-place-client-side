@@ -5,3 +5,4 @@ export const getTopics = () => {
         }
     }).then(res => res.json());
 }
+

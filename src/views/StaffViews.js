@@ -16,6 +16,7 @@ import { EditTeacherAssignment} from "../components/assignments/EditAssignment"
 import { PowerRankings } from "../components/specialassignments/PowerRankings"
 import { TeacherInspirationList } from "../components/inspirations/TeacherInspirationList"
 import { TopicList } from "../components/discussions/DiscussionList"
+import { CommentList } from "../components/discussions/CommentList"
 
 export const StaffViews = ({ token, setToken}) => {
   return <>
@@ -37,6 +38,8 @@ export const StaffViews = ({ token, setToken}) => {
         <Route path="/powerrankings" element={<PowerRankings/>}  />
         <Route path="/studentinspirationlist" element={<TeacherInspirationList/>}  />
         <Route path="/discussions" element={<TopicList/>}  />
+        <Route path="/discussions/:discussionId" element={<CommentList/>}  />
+
 
 
 
