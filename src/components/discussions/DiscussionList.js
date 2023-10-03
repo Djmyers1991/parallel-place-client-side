@@ -21,18 +21,16 @@ export const TopicList = () => {
 
   return (
     <div className="container">
-      <h2 className="title is-2">Discussion Topics</h2>
+      <h2 className="title is-2">Discussions</h2>
       <div className="columns is-multiline">
         {topics.map((topic) => (
           <div className="column is-full" key={topic.id}>
             <div className="assignment-custom-card">
               <div className="card-content">
                 <header className="title is-5">
-                  {/* {currentUser?.is_staff ? (
-                    <Link to={`/editassignment/${assignment.id}`}> {assignment.title}</Link>
-                  ) : (
-                    <Link to={`/standardassignmentform`}> {assignment.title}</Link>
-                  )} */}
+                 
+                    <Link to={`/discussions/${topic.id}`}> Topic {topic.id}</Link>
+                  
                 </header>
                 <div> {topic.writing_prompt}</div>
               </div>
