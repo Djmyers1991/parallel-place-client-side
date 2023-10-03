@@ -41,6 +41,8 @@ export const NavBar = ({ token, setToken }) => {
                 <Link to="/teachernamelist" className="navbar-item">Book Club Leaders</Link>
                 <Link to="/studentinspirationlist" className="navbar-item">Inspiration List</Link>
                 <Link to="/powerrankings" className="navbar-item">Power Rankings</Link>
+                <Link to="/discussions" className="navbar-item">Discussions</Link>
+
 
 
 
