@@ -15,6 +15,7 @@ import { PowerRankings } from "../components/specialassignments/PowerRankings"
 import { StudentInspirationList } from "../components/inspirations/StudentInspirationList"
 import { StudentInspirationForm } from "../components/inspirations/StudentInspirationForm"
 import { InspirationEdit } from "../components/inspirations/InspirationEdit"
+import { TopicList } from "../components/discussions/DiscussionList"
 
 
 
@@ -37,6 +38,8 @@ export const AuthorViews = ({ token, setToken}) => {
         <Route path="/studentinspirationlist" element={<StudentInspirationList/>}  />
         <Route path="/inspirationform" element={<StudentInspirationForm/>}  />
         <Route path="/editinspiration/:inspirationId" element={<InspirationEdit/>}  />
+        <Route path="/discussions" element={<TopicList/>}  />
+
 
 
 
