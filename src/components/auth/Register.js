@@ -183,8 +183,7 @@ export const Register = ({ setToken, setStaff }) => {
 
         <div className="field is-grouped">
           <div className="control">
-            <button className="button is-link is-light" type="submit">  <Link to="/">Submit</Link>
-</button>
+            <button className="button is-link" type="submit">Submit</button>
           </div>
           <div className="control">
             <Link to="/login" className="button is-link is-light">Cancel</Link>
